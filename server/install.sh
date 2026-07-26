@@ -33,6 +33,7 @@ cat > /etc/init.d/eianun-web <<'SERVICE'
 command="/usr/bin/busybox"
 command_args="httpd -f -p ${EIANUN_WEB_PORT} -h ${EIANUN_WEB_DIR}"
 command_background="yes"
+pidfile="/run/eianun-web.pid"
 
 depend() {
   need net
