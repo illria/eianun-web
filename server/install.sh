@@ -12,6 +12,7 @@ fi
 
 apk add --no-cache ca-certificates >/dev/null
 mkdir -p /opt/eianun-web
+mkdir -p /usr/local/sbin
 
 UPDATE_TMP="$(mktemp /tmp/eianun-web-update.XXXXXX)"
 wget -qO "$UPDATE_TMP" \
