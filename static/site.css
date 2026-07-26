@@ -106,27 +106,6 @@ a { color: inherit; text-decoration: none; }
 .tool-mark img { display: none !important; }
 .tool-mark-fallback { color: inherit !important; display: block !important; }
 
-/* Brand icons are the final visual layer and stay inside the fixed card slot. */
-.tool-mark { background: transparent !important; border: 0 !important; height: 48px !important; padding: 0 !important; width: 48px !important; }
-.brand-icon { align-items: center; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); display: inline-flex; height: 48px; justify-content: center; overflow: hidden; width: 48px; }
-
-/* Local brand palette: compact marks inspired by each official identity. */
-.tool-mark { background: transparent !important; border: 0; height: 48px; padding: 0; width: 48px; }
-.brand-icon { align-items: center; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); display: inline-flex; height: 48px; justify-content: center; overflow: hidden; width: 48px; }
-.brand-glyph { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 950; letter-spacing: -.08em; line-height: 1; }
-.brand-okx { background: #050505; color: #fff; }.brand-okx .brand-glyph { font-size: 9px; }
-.brand-binance { background: #f3ba2f; color: #111; }.brand-binance .brand-glyph { font-size: 10px; }
-.brand-bybit { background: #171717; color: #fff; }.brand-bybit .brand-glyph { font-size: 10px; }
-.brand-onekey { background: #111; color: #fff; }.brand-onekey .brand-glyph { font-size: 9px; }
-.brand-safepal { background: #5125e7; color: #fff; }.brand-safepal .brand-glyph { font-size: 9px; }
-.brand-ledger { background: #161616; color: #fff; }.brand-ledger .brand-glyph { font-size: 8px; letter-spacing: -.12em; }
-.brand-usmart { background: #1264f4; color: #fff; }.brand-usmart .brand-glyph { font-size: 16px; }
-.brand-ibkr { background: #111; color: #fff; }.brand-ibkr .brand-glyph { border-left: 4px solid #e3262e; font-size: 9px; padding-left: 4px; }
-.brand-wise { background: #9fe870; color: #163300; }.brand-wise .brand-glyph { font-size: 15px; }
-.brand-n26 { background: #111; color: #fff; }.brand-n26 .brand-glyph { font-size: 9px; }
-.brand-giffgaff { background: #8bcf19; color: #102209; }.brand-giffgaff .brand-glyph { font-size: 9px; }
-.brand-eskimo { background: #1769e8; color: #fff; }.brand-eskimo .brand-glyph { font-size: 8px; }
-
 /* Stable local brand marks: remote favicons must never change card geometry. */
 .tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
 .tool-mark img { display: none !important; }
@@ -153,3 +132,4 @@ a { color: inherit; text-decoration: none; }
 .tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
 .tool-mark img { display: none !important; }
 .tool-mark-fallback { color: inherit !important; display: block !important; }
+
