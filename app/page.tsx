@@ -34,6 +34,25 @@ const tools: Tool[] = [
   { name: "Eskimo", mark: "ESK", icon: "https://eskimo.travel/favicon.ico", category: "跨境通讯", label: "全球 eSIM", detail: "短期出境和多地区流量的选择之一。", code: "NIFULEI", link: "https://eskimo.travel" },
 ];
 
+function brandKey(name: string) {
+  if (name.includes("OKX")) return "okx";
+  if (name.includes("Binance")) return "binance";
+  if (name.includes("Bybit")) return "bybit";
+  if (name.includes("OneKey")) return "onekey";
+  if (name.includes("SafePal")) return "safepal";
+  if (name.includes("Ledger")) return "ledger";
+  if (name.includes("uSMART")) return "usmart";
+  if (name.includes("Interactive Brokers")) return "ibkr";
+  if (name.includes("Wise")) return "wise";
+  if (name.includes("N26")) return "n26";
+  if (name.includes("giffgaff")) return "giffgaff";
+  return "eskimo";
+}
+
+function BrandIcon({ tool }: { tool: Pick<Tool, "name" | "mark"> }) {
+  return <span className={`brand-icon brand-${brandKey(tool.name)}`} aria-hidden="true"><span className="brand-glyph">{tool.mark}</span></span>;
+}
+
 const scenarios: { id: ScenarioId; mark: string; title: string; description: string; category: Exclude<Category, "全部">; summary: string; steps: string[] }[] = [
   { id: "asset", mark: "₿", title: "支付与数字资产", description: "从买入、转账到安全存储，先建立不容易走错的基础路径。", category: "加密交易所", summary: "先解决交易入口，再把长期持有的资产移出平台管理。", steps: ["准备连接与身份环境", "选择交易与充值入口", "建立钱包和备份习惯", "复核费用与地区规则"] },
   { id: "market", mark: "↗", title: "港股与美股账户", description: "整理开户、入金、交易和长期持有之间真正需要的环节。", category: "券商", summary: "把开户、入金、交易和长期持有拆开，不被一张宣传图带着走。", steps: ["确认所在地和账户资格", "比较入金与换汇路径", "选择券商和市场范围", "建立记录与复核习惯"] },
@@ -170,7 +189,7 @@ export default function Home() {
 
       <section className="route-section"><div className="route-intro"><span className="oc-label">02 / THE ROUTE</span><h2>{selectedScenario.title}<br /><em>按顺序做。</em></h2><p>{selectedScenario.summary}</p><button className="oc-button primary" onClick={shareRoute}>分享这条路线 <span>↗</span></button>{shareMessage && <small className="share-message">{shareMessage}</small>}</div><div className="route-steps">{selectedScenario.steps.map((step, index) => <button key={step} className={index === 0 ? "current" : ""} onClick={() => { setCategory(index === 1 ? selectedScenario.category : "全部"); jump("tool-library"); }}><span>0{index + 1}</span><div><b>{step}</b><small>{index === 0 ? "当前建议" : "下一步核对"}</small></div><i>↗</i></button>)}</div></section>
 
-      <section className="library-section" id="tool-library"><div className="oc-section tool-wrap"><div className="oc-section-head"><div><span className="oc-label">03 / TOOL LIBRARY</span><h2>把入口放在<br /><em>该出现的地方。</em></h2></div><p>{visibleTools.length} 个结果<br />本地筛选，不上传数据</p></div><div className="library-controls"><div className="search-box"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索工具、用途或类别" aria-label="搜索工具" /></div><button className={favoritesOnly ? "filter-button active" : "filter-button"} onClick={() => setFavoritesOnly((value) => !value)}>★ 收藏 {favorites.length}</button><div className="category-pills">{categories.map((item) => <button key={item} className={category === item ? "active" : ""} onClick={() => setCategory(item)}>{item}</button>)}</div></div><div className="tool-grid">{visibleTools.length ? visibleTools.map((tool) => { const favorite = favorites.includes(tool.name); return <article className="tool-card" key={tool.name}><div className="tool-card-top"><span className="tool-mark"><img src={tool.icon} alt="" onError={(event) => { event.currentTarget.style.display = "none"; const fallback = event.currentTarget.nextElementSibling as HTMLElement | null; if (fallback) fallback.style.display = "block"; }} /><span className="tool-mark-fallback">{tool.mark}</span></span><button className={favorite ? "favorite active" : "favorite"} onClick={() => toggleFavorite(tool.name)} aria-label={favorite ? `取消收藏 ${tool.name}` : `收藏 ${tool.name}`}>★</button></div><span className="tool-category">{tool.category}</span><h3>{tool.name}</h3><strong>{tool.label}</strong><p>{tool.detail}</p>{tool.code ? <div className="code-row"><span>邀请码 <b>{tool.code}</b></span><button onClick={() => copy(tool.code!)}>{copied === tool.code ? "已复制" : "复制"}</button></div> : <div className="code-row"><span>官方入口</span><a href={tool.link} target="_blank" rel="noreferrer">打开 ↗</a></div>}<a className="tool-link" href={tool.link} target="_blank" rel="noreferrer">查看官方入口　↗</a></article>; }) : <div className="empty-state">没有找到匹配入口。试试清空搜索或切换类别。</div>}</div></div></section>
+      <section className="library-section" id="tool-library"><div className="oc-section tool-wrap"><div className="oc-section-head"><div><span className="oc-label">03 / TOOL LIBRARY</span><h2>把入口放在<br /><em>该出现的地方。</em></h2></div><p>{visibleTools.length} 个结果<br />本地筛选，不上传数据</p></div><div className="library-controls"><div className="search-box"><span>⌕</span><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索工具、用途或类别" aria-label="搜索工具" /></div><button className={favoritesOnly ? "filter-button active" : "filter-button"} onClick={() => setFavoritesOnly((value) => !value)}>★ 收藏 {favorites.length}</button><div className="category-pills">{categories.map((item) => <button key={item} className={category === item ? "active" : ""} onClick={() => setCategory(item)}>{item}</button>)}</div></div><div className="tool-grid">{visibleTools.length ? visibleTools.map((tool) => { const favorite = favorites.includes(tool.name); return <article className="tool-card" key={tool.name}><div className="tool-card-top"><BrandIcon tool={tool} /><button className={favorite ? "favorite active" : "favorite"} onClick={() => toggleFavorite(tool.name)} aria-label={favorite ? `取消收藏 ${tool.name}` : `收藏 ${tool.name}`}>★</button></div><span className="tool-category">{tool.category}</span><h3>{tool.name}</h3><strong>{tool.label}</strong><p>{tool.detail}</p>{tool.code ? <div className="code-row"><span>邀请码 <b>{tool.code}</b></span><button onClick={() => copy(tool.code!)}>{copied === tool.code ? "已复制" : "复制"}</button></div> : <div className="code-row"><span>官方入口</span><a href={tool.link} target="_blank" rel="noreferrer">打开 ↗</a></div>}<a className="tool-link" href={tool.link} target="_blank" rel="noreferrer">查看官方入口　↗</a></article>; }) : <div className="empty-state">没有找到匹配入口。试试清空搜索或切换类别。</div>}</div></div></section>
 
       <section className="oc-section" id="about"><div className="privacy-card"><div className="privacy-icon">◎</div><div><span className="oc-label">04 / WHY TRUST THIS</span><h2>真实经历，不是搬运。</h2><p>这里记录跨境生活中真实遇到的问题、踩过的坑，以及整理之后可以复用的方法。收藏、主题和筛选结果只保存在你的设备里，不需要注册。</p></div><div className="privacy-stats"><span><b>12</b>工具入口</span><span><b>05</b>路线节点</span><span><b>100%</b>自查提醒</span></div></div></section>
 
