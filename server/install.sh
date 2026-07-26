@@ -13,13 +13,12 @@ fi
 apk add --no-cache ca-certificates >/dev/null
 mkdir -p /opt/eianun-web
 
-wget -qO /usr/local/sbin/eianun-web-update \
-  https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh
+wget -qO /usr/local/sbin/eianun-web-update   https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh
 chmod 0755 /usr/local/sbin/eianun-web-update
 
 cat > /etc/conf.d/eianun-web <<'CONF'
 EIANUN_WEB_DIR="/opt/eianun-web"
-EIANUN_WEB_PORT="80"
+EIANUN_WEB_PORT="9191"
 CONF
 
 cat > /etc/init.d/eianun-web <<'SERVICE'
