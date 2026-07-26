@@ -3,210 +3,87 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#141411">
-  <meta name="description" content="EIANUN Field Guide：把跨境生活拆成清晰、可执行的下一步。">
-  <title>EIANUN Field Guide · 出海行动指南</title>
+  <meta name="theme-color" content="#10100f">
+  <meta name="description" content="EIANUN 泥伏雷跨境生活行动指南：场景、路线、工具和真实边界。">
+  <title>EIANUN · 泥伏雷跨境生活行动指南</title>
   <link rel="icon" href="favicon.svg">
-  <style>
-    :root {
-      --ink: #161613;
-      --paper: #f3f0e8;
-      --paper-2: #e8e4da;
-      --card: #1e1e19;
-      --card-2: #282820;
-      --line: rgba(243, 240, 232, .16);
-      --line-dark: rgba(22, 22, 19, .16);
-      --text: #f3f0e8;
-      --muted: #a6a39a;
-      --quiet: #6d6b64;
-      --accent: #ff6b45;
-      --accent-2: #d7f36b;
-      --shadow: 0 22px 70px rgba(0, 0, 0, .18);
-      --radius: 18px;
-      --max: 1180px;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; }
-    body.dark { background: var(--ink); color: var(--text); }
-    button, a { font: inherit; }
-    button { cursor: pointer; }
-    a { color: inherit; text-decoration: none; }
-    .shell { background: var(--paper); color: var(--ink); min-height: 100vh; overflow: hidden; }
-    .shell.dark { --ink: #f3f0e8; --paper: #161613; --paper-2: #22221c; --card: #1e1e19; --card-2: #282820; --line: rgba(243, 240, 232, .16); --line-dark: rgba(243, 240, 232, .16); --text: #f3f0e8; --muted: #a6a39a; --quiet: #858279; background: var(--paper); color: var(--text); }
-    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
-    .topbar { align-items: center; border-bottom: 1px solid var(--line-dark); display: flex; height: 78px; justify-content: space-between; }
-    .dark .topbar { border-color: var(--line); }
-    .brand { align-items: center; display: flex; gap: 12px; }
-    .brand-mark { align-items: center; background: var(--accent); color: var(--ink); display: inline-flex; font-size: 20px; font-weight: 900; height: 38px; justify-content: center; letter-spacing: -.08em; width: 38px; }
-    .brand-copy strong, .brand-copy small { display: block; }
-    .brand-copy strong { font-size: 14px; letter-spacing: -.03em; }
-    .brand-copy small { color: var(--quiet); font-size: 9px; letter-spacing: .16em; margin-top: 3px; text-transform: uppercase; }
-    .dark .brand-copy small { color: var(--muted); }
-    .nav { align-items: center; display: flex; gap: 26px; }
-    .nav a, .nav button { background: transparent; border: 0; color: var(--quiet); font-size: 12px; padding: 8px 0; }
-    .dark .nav a, .dark .nav button { color: var(--muted); }
-    .nav a:hover, .nav button:hover { color: var(--accent); }
-    .theme { border: 1px solid var(--line-dark) !important; border-radius: 999px; padding: 8px 11px !important; }
-    .dark .theme { border-color: var(--line) !important; }
-    .hero { display: grid; gap: 80px; grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr); padding: 92px 0 86px; }
-    .eyebrow, .section-label { color: var(--accent); font-size: 10px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
-    .eyebrow { align-items: center; display: flex; gap: 9px; }
-    .eyebrow::before { background: var(--accent); border-radius: 50%; box-shadow: 0 0 0 5px rgba(255, 107, 69, .18); content: ""; display: inline-block; height: 7px; width: 7px; }
-    h1 { font-size: clamp(54px, 8vw, 104px); letter-spacing: -.095em; line-height: .91; margin: 26px 0 28px; max-width: 780px; }
-    h1 em, h2 em { color: var(--accent); font-style: normal; }
-    .hero-copy { color: var(--quiet); font-size: 16px; line-height: 1.8; max-width: 500px; }
-    .dark .hero-copy { color: var(--muted); }
-    .hero-actions { align-items: center; display: flex; gap: 22px; margin-top: 34px; }
-    .btn { align-items: center; border: 1px solid transparent; display: inline-flex; font-size: 12px; font-weight: 800; gap: 12px; justify-content: center; padding: 13px 17px; }
-    .btn-primary { background: var(--accent); color: var(--ink); }
-    .btn-primary:hover { background: var(--accent-2); }
-    .btn-ghost { background: transparent; border-color: var(--line-dark); color: var(--ink); }
-    .dark .btn-ghost { border-color: var(--line); color: var(--text); }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-    .hero-meta { border-top: 1px solid var(--line-dark); display: flex; gap: 38px; margin-top: 82px; max-width: 650px; padding-top: 17px; }
-    .dark .hero-meta { border-color: var(--line); }
-    .hero-meta span { color: var(--quiet); font-size: 11px; }
-    .dark .hero-meta span { color: var(--muted); }
-    .hero-meta b { color: inherit; display: block; font-size: 21px; letter-spacing: -.05em; margin-bottom: 3px; }
-    .hero-visual { align-self: center; background: var(--card); box-shadow: var(--shadow); color: var(--text); min-height: 390px; padding: 24px; position: relative; }
-    .hero-visual::before { border: 1px solid rgba(215, 243, 107, .6); content: ""; inset: 12px; pointer-events: none; position: absolute; }
-    .visual-top { align-items: center; display: flex; justify-content: space-between; position: relative; }
-    .visual-top small { color: var(--muted); font-size: 10px; letter-spacing: .12em; }
-    .visual-index { color: var(--accent-2); font-size: 52px; font-weight: 900; letter-spacing: -.1em; line-height: 1; }
-    .route-map { height: 250px; margin-top: 20px; position: relative; }
-    .route-line { border-top: 1px dashed rgba(215, 243, 107, .7); position: absolute; transform-origin: left center; }
-    .route-line.a { left: 14%; top: 58%; transform: rotate(-31deg); width: 48%; }
-    .route-line.b { left: 43%; top: 34%; transform: rotate(30deg); width: 42%; }
-    .route-line.c { left: 65%; top: 55%; transform: rotate(-55deg); width: 28%; }
-    .route-node { align-items: center; background: var(--card-2); border: 1px solid var(--accent-2); border-radius: 50%; color: var(--accent-2); display: flex; font-size: 18px; height: 52px; justify-content: center; position: absolute; width: 52px; z-index: 1; }
-    .route-node span { bottom: -24px; color: var(--muted); font-size: 9px; left: 50%; position: absolute; transform: translateX(-50%); white-space: nowrap; }
-    .route-node.n1 { left: 7%; top: 53%; }.route-node.n2 { left: 37%; top: 22%; }.route-node.n3 { left: 65%; top: 52%; }.route-node.n4 { right: 2%; top: 7%; }
-    .visual-foot { align-items: end; bottom: 24px; display: flex; justify-content: space-between; left: 24px; position: absolute; right: 24px; }
-    .visual-foot strong { font-size: 15px; }.visual-foot small { color: var(--muted); display: block; font-size: 10px; line-height: 1.6; margin-top: 5px; max-width: 180px; }
-    .section { border-top: 1px solid var(--line-dark); padding: 88px 0; }
-    .dark .section { border-color: var(--line); }
-    .section-head { align-items: end; display: flex; justify-content: space-between; margin-bottom: 28px; }
-    h2 { font-size: clamp(33px, 5vw, 58px); letter-spacing: -.085em; line-height: .98; margin: 13px 0 0; }
-    .section-note { color: var(--quiet); font-size: 12px; line-height: 1.7; text-align: right; }
-    .dark .section-note { color: var(--muted); }
-    .scenario-grid { display: grid; gap: 12px; grid-template-columns: repeat(4, 1fr); }
-    .scenario { background: var(--paper-2); border: 1px solid transparent; color: var(--ink); min-height: 240px; padding: 20px; position: relative; text-align: left; transition: border .2s, transform .2s, background .2s; }
-    .dark .scenario { background: var(--card); color: var(--text); }
-    .scenario:hover { border-color: var(--accent); transform: translateY(-5px); }
-    .scenario-num { color: var(--accent); font-size: 10px; font-weight: 900; position: absolute; right: 17px; top: 18px; }
-    .scenario-symbol { color: var(--accent); display: block; font-size: 29px; font-weight: 900; height: 70px; letter-spacing: -.12em; }
-    .scenario h3 { font-size: 18px; letter-spacing: -.06em; margin: 18px 0 9px; }
-    .scenario p { color: var(--quiet); font-size: 11px; line-height: 1.7; margin: 0; }
-    .dark .scenario p { color: var(--muted); }
-    .scenario .arrow { bottom: 18px; color: var(--accent); font-size: 11px; font-weight: 800; left: 20px; position: absolute; }
-    .feature { background: var(--card); color: var(--text); display: grid; gap: 74px; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); padding: 90px max(24px, calc((100vw - var(--max)) / 2)); }
-    .feature-copy p { color: var(--muted); font-size: 13px; line-height: 1.8; max-width: 390px; }
-    .route-list { border-top: 1px solid var(--line); margin-top: 20px; }
-    .route-row { align-items: center; border-bottom: 1px solid var(--line); display: grid; gap: 16px; grid-template-columns: 42px 1fr auto; padding: 14px 0; }
-    .route-row span { color: var(--accent-2); font-size: 10px; font-weight: 900; }.route-row b { font-size: 14px; }.route-row small { color: var(--muted); font-size: 10px; }.route-row i { color: var(--accent); font-style: normal; }
-    .toolbox { background: var(--paper-2); }
-    .dark .toolbox { background: var(--card-2); }
-    .tool-layout { display: grid; gap: 30px; grid-template-columns: 190px 1fr; }
-    .filters { border-right: 1px solid var(--line-dark); padding-right: 22px; }
-    .dark .filters { border-color: var(--line); }
-    .filters p { color: var(--quiet); font-size: 10px; letter-spacing: .13em; margin: 0 0 16px; text-transform: uppercase; }
-    .filters button { background: transparent; border: 0; color: var(--quiet); display: block; font-size: 12px; padding: 9px 0; text-align: left; width: 100%; }
-    .dark .filters button { color: var(--muted); }.filters button.active, .filters button:hover { color: var(--accent); font-weight: 800; }
-    .tool-grid { display: grid; gap: 12px; grid-template-columns: repeat(3, 1fr); }
-    .tool { background: var(--paper); border: 1px solid var(--line-dark); min-height: 248px; padding: 17px; position: relative; }
-    .dark .tool { background: var(--card); border-color: var(--line); }
-    .tool:hover { border-color: var(--accent); }
-    .tool-head { align-items: center; display: flex; justify-content: space-between; }.tool-mark { align-items: center; background: var(--accent); color: var(--ink); display: inline-flex; font-size: 11px; font-weight: 900; height: 34px; justify-content: center; width: 42px; }.tool-cat { color: var(--quiet); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }.dark .tool-cat { color: var(--muted); }
-    .tool h3 { font-size: 17px; letter-spacing: -.05em; margin: 22px 0 6px; }.tool strong { font-size: 11px; }.tool p { color: var(--quiet); font-size: 11px; line-height: 1.65; margin: 9px 0 14px; }.dark .tool p { color: var(--muted); }
-    .code { align-items: center; background: var(--paper-2); display: flex; font-size: 10px; justify-content: space-between; padding: 8px 9px; }.dark .code { background: var(--card-2); }.code b { font-size: 11px; }.code button { background: transparent; border: 0; color: var(--accent); font-size: 10px; font-weight: 800; padding: 0; }
-    .tool-link { bottom: 15px; color: var(--accent); font-size: 10px; font-weight: 800; left: 17px; position: absolute; }
-    .trust { align-items: center; display: grid; gap: 25px; grid-template-columns: 70px 1fr 220px; padding: 74px 0; }
-    .trust-badge { align-items: center; background: var(--accent-2); color: var(--ink); display: flex; font-size: 27px; height: 60px; justify-content: center; width: 60px; }.trust p { color: var(--quiet); font-size: 12px; line-height: 1.8; max-width: 650px; }.dark .trust p { color: var(--muted); }.trust-stats { border-left: 1px solid var(--line-dark); display: flex; gap: 20px; padding-left: 25px; }.dark .trust-stats { border-color: var(--line); }.trust-stats b { display: block; font-size: 23px; }.trust-stats span { color: var(--quiet); font-size: 10px; }.dark .trust-stats span { color: var(--muted); }
-    .footer { border-top: 1px solid var(--line-dark); padding: 36px 0 28px; }.dark .footer { border-color: var(--line); }.footer-row { align-items: end; display: flex; justify-content: space-between; }.footer-links { display: flex; gap: 20px; }.footer-links a, .footer small { color: var(--quiet); font-size: 10px; }.dark .footer-links a, .dark .footer small { color: var(--muted); }.footer-links a:hover { color: var(--accent); }.footer small { display: block; margin-top: 25px; }
-    .modal-backdrop { align-items: center; background: rgba(10, 10, 8, .82); display: flex; inset: 0; justify-content: center; padding: 20px; position: fixed; z-index: 20; }.modal { background: #f3f0e8; box-shadow: var(--shadow); color: #161613; max-width: 500px; padding: 32px; width: 100%; }.modal h2 { font-size: 31px; margin: 14px 0; }.modal p { color: #67655d; font-size: 12px; line-height: 1.8; }.modal .btn { margin-top: 12px; width: 100%; }.hidden { display: none !important; }
-    @media (max-width: 860px) { .hero { gap: 38px; grid-template-columns: 1fr; padding: 72px 0; }.hero-visual { min-height: 330px; }.scenario-grid { grid-template-columns: repeat(2, 1fr); }.feature { gap: 40px; grid-template-columns: 1fr; }.tool-layout { grid-template-columns: 150px 1fr; }.tool-grid { grid-template-columns: repeat(2, 1fr); }.trust { grid-template-columns: 60px 1fr; }.trust-stats { border-left: 0; border-top: 1px solid var(--line-dark); grid-column: 1 / -1; padding: 18px 0 0; }.dark .trust-stats { border-color: var(--line); } }
-    @media (max-width: 560px) { .wrap { width: min(var(--max), calc(100% - 32px)); }.topbar { height: 68px; }.nav { gap: 12px; }.nav a { display: none; }.hero { padding: 60px 0; }.hero h1 { font-size: 55px; }.hero-actions { align-items: stretch; flex-direction: column; gap: 10px; }.hero-meta { gap: 20px; justify-content: space-between; margin-top: 58px; }.hero-meta b { font-size: 18px; }.section { padding: 64px 0; }.section-head { align-items: start; flex-direction: column; gap: 15px; }.section-note { text-align: left; }.scenario-grid, .tool-grid { grid-template-columns: 1fr; }.scenario { min-height: 205px; }.tool-layout { display: block; }.filters { border-bottom: 1px solid var(--line-dark); border-right: 0; display: flex; gap: 17px; margin-bottom: 20px; overflow-x: auto; padding: 0 0 12px; }.dark .filters { border-color: var(--line); }.filters p { display: none; }.filters button { flex: 0 0 auto; width: auto; }.route-row { grid-template-columns: 34px 1fr auto; }.route-row small { display: none; }.footer-row { align-items: start; flex-direction: column; gap: 24px; }.footer-links { flex-wrap: wrap; gap: 14px; } }
-  </style>
+  <link rel="stylesheet" href="site.css">
 </head>
 <body>
-  <div class="shell dark" id="site">
-    <header class="topbar wrap">
-      <a class="brand" href="#top" aria-label="回到首页"><span class="brand-mark">E</span><span class="brand-copy"><strong>EIANUN FIELD GUIDE</strong><small>出海行动指南 · 2026</small></span></a>
-      <nav class="nav" aria-label="主导航"><a href="#scenarios">从哪里开始</a><a href="#tools">工具库</a><a href="#about">关于指南</a><button class="theme" id="theme" aria-label="切换深浅色主题">☼</button></nav>
+  <main class="eianun-site" id="site">
+    <header class="oc-header">
+      <button class="oc-brand" data-jump="top" aria-label="回到首页"><span class="oc-mark">E</span><span><strong>EIANUN</strong><small>跨境生活行动指南</small></span></button>
+      <nav class="oc-nav" id="nav" aria-label="主导航"><button data-jump="scenarios">金融路线图</button><button data-jump="featured">精选专题</button><button data-jump="tool-library">工具库</button><button data-jump="about">关于指南</button><a href="https://github.com/illria/eianun-web" target="_blank" rel="noreferrer">GitHub ↗</a></nav>
+      <div class="oc-actions"><button class="oc-icon" id="theme" aria-label="切换深浅色模式">◐</button><button class="oc-menu" id="menu" aria-label="打开菜单">☰</button></div>
     </header>
+    <div class="oc-banner"><span>NEW</span> EIANUN 行动指南已重新设计　<a href="#scenarios">从场景开始 →</a><button aria-label="关闭提示">×</button></div>
 
-    <main id="top">
-      <section class="hero wrap">
-        <div>
-          <div class="eyebrow">FIELD GUIDE / CROSS-BORDER LIFE</div>
-          <h1>出海不是目的，<br><em>把下一步做对</em>才是。</h1>
-          <p class="hero-copy">把海外账户、支付、资产与通讯拆成一张清楚的行动地图。先判断你要解决的问题，再拿走对应的工具和路径。</p>
-          <div class="hero-actions"><a class="btn btn-primary" href="#scenarios">从场景开始 <span>↘</span></a><a class="btn btn-ghost" href="#tools">直接看工具库 <span>→</span></a></div>
-          <div class="hero-meta"><span><b>04</b>核心场景</span><span><b>12</b>工具入口</span><span><b>06</b>行动步骤</span><span><b>01</b>清晰地图</span></div>
-        </div>
-        <div class="hero-visual" aria-label="跨境行动路线示意图">
-          <div class="visual-top"><small>01 / YOUR ROUTE</small><strong class="visual-index">MAP</strong></div>
-          <div class="route-map"><i class="route-line a"></i><i class="route-line b"></i><i class="route-line c"></i><span class="route-node n1">⌁<span>连接</span></span><span class="route-node n2">₿<span>支付</span></span><span class="route-node n3">▤<span>账户</span></span><span class="route-node n4">◈<span>资产</span></span></div>
-          <div class="visual-foot"><div><strong>从问题出发</strong><small>每个节点都是一个可执行的选择，而不是一堆链接。</small></div><span>↗</span></div>
-        </div>
-      </section>
+    <section class="oc-hero" id="top">
+      <div class="oc-hero-copy"><div class="oc-eyebrow">EIANUN / FIELD GUIDE / 2026</div><h1>把跨境生活，<br><em>运行起来。</em></h1><p>一个轻量、按场景组织的跨境生活工具箱。先判断你要解决的问题，再拿走对应的路线、入口和下一步。</p><div class="oc-hero-actions"><a class="oc-button primary" href="#scenarios">开始一次路线诊断 <span>↘</span></a><a class="oc-button ghost" href="https://github.com/illria/eianun-web" target="_blank" rel="noreferrer">查看 GitHub <span>↗</span></a></div><div class="oc-hero-meta"><span><b>04</b>核心场景</span><span><b>12</b>工具入口</span><span><b>05</b>路线节点</span></div></div>
+      <div class="terminal-card" aria-label="行动路线终端预览"><div class="terminal-bar"><span class="traffic"><i></i><i></i><i></i></span><small>eianun — route</small><span>⌘K</span></div><div class="terminal-body"><p><span class="prompt">$</span> eianun route --goal <b id="terminal-goal">asset</b></p><p class="terminal-muted">正在拆解你的下一步...</p><p class="terminal-success">✓ 场景　<span id="terminal-title">支付与数字资产</span></p><p class="terminal-success">✓ 路线　<span id="terminal-route">准备连接与身份环境 → 选择交易与充值入口</span></p><p class="terminal-success">✓ 入口　<span id="terminal-category">加密交易所</span></p><p class="terminal-muted cursor-line"><span class="prompt">$</span> 等待你的选择<span class="cursor"></span></p></div><div class="terminal-foot"><span>LOCAL / PRIVACY FIRST</span><button data-jump="scenarios">选择场景　↘</button></div></div>
+    </section>
 
-      <section class="section wrap" id="scenarios">
-        <div class="section-head"><div><div class="section-label">01 / START HERE</div><h2>你现在要解决<br><em>哪一件事？</em></h2></div><p class="section-note">不要从品牌开始。<br>先从自己的场景开始。</p></div>
-        <div class="scenario-grid">
-          <button class="scenario" data-category="加密交易所"><span class="scenario-num">01</span><span class="scenario-symbol">₿</span><h3>支付与数字资产</h3><p>从买入、转账到安全存储，先建立不容易走错的基础路径。</p><span class="arrow">进入这条路径　↗</span></button>
-          <button class="scenario" data-category="券商"><span class="scenario-num">02</span><span class="scenario-symbol">↗</span><h3>港股与美股账户</h3><p>整理开户、入金、交易和长期持有之间真正需要的环节。</p><span class="arrow">进入这条路径　↗</span></button>
-          <button class="scenario" data-category="银行卡"><span class="scenario-num">03</span><span class="scenario-symbol">▤</span><h3>海外账户与转账</h3><p>多币种收款、换汇和跨境转账，找到适合自己的低摩擦组合。</p><span class="arrow">进入这条路径　↗</span></button>
-          <button class="scenario" data-category="跨境通讯"><span class="scenario-num">04</span><span class="scenario-symbol">⌁</span><h3>出境连接与号码</h3><p>eSIM、境外号码与流量，让连接成为基础设施而不是临时救火。</p><span class="arrow">进入这条路径　↗</span></button>
-        </div>
-      </section>
+    <section class="oc-section" id="scenarios"><div class="oc-section-head"><div><span class="oc-label">01 / START HERE</span><h2>你现在要解决<br><em>哪一件事？</em></h2></div><p>不要从品牌开始。<br>先从自己的场景开始。</p></div><div class="scenario-grid" id="scenario-grid"></div></section>
 
-      <section class="feature" id="route"><div class="feature-copy"><div class="section-label">02 / THE ROUTE</div><h2>复杂的事，<br><em>按顺序做。</em></h2><p>你不需要一次理解所有金融产品。先完成眼前的一步，下一步自然会变得更清楚。</p><a class="btn btn-primary" href="#tools">查看工具入口　→</a></div><div class="route-list"><div class="route-row"><span>01</span><div><b>连接</b><small>网络、号码、设备环境</small></div><i>↗</i></div><div class="route-row"><span>02</span><div><b>支付</b><small>交易所、充值、换汇</small></div><i>↗</i></div><div class="route-row"><span>03</span><div><b>账户</b><small>银行卡、券商、收款</small></div><i>↗</i></div><div class="route-row"><span>04</span><div><b>资产</b><small>钱包、保管、长期配置</small></div><i>↗</i></div><div class="route-row"><span>05</span><div><b>复盘</b><small>规则、费用、风险边界</small></div><i>↗</i></div></div></section>
+    <section class="oc-section featured-section" id="featured"><div class="oc-section-head"><div><span class="oc-label">FEATURED / FIELD NOTES</span><h2>泥伏雷出品，<br><em>独立专题。</em></h2></div><p>把一个主题讲完整，<br>再回到工具和路径。</p></div><div class="featured-grid"><button data-category="冷钱包"><span>▣</span><small>自用指南</small><h3>硬件冷钱包全品牌横评</h3><p>OneKey · Ledger · SafePal · Tangem，先看保管逻辑，再选设备。</p><b>进入专题　↗</b></button><button data-category="券商"><span>↗</span><small>新玩法</small><h3>链上美股与全球资产</h3><p>把开户、入金和资产配置拆开，理解每一个入口的边界。</p><b>进入专题　↗</b></button><button data-category="加密交易所"><span>₿</span><small>新手必看</small><h3>购买比特币入门路径</h3><p>从交易所、第一笔买入到转出保管，按步骤检查，不跳关。</p><b>进入专题　↗</b></button></div></section>
 
-      <section class="section toolbox" id="tools"><div class="wrap"><div class="section-head"><div><div class="section-label">03 / TOOL LIBRARY</div><h2>把入口放在<br><em>该出现的地方。</em></h2></div><p class="section-note" id="count">12 个入口<br>按场景筛选</p></div><div class="tool-layout"><aside class="filters" id="filters"><p>Filter by</p></aside><div class="tool-grid" id="tool-grid"></div></div></div></section>
+    <section class="route-section" id="route"><div class="route-intro"><span class="oc-label">02 / THE ROUTE</span><h2 id="route-title">支付与数字资产<br><em>按顺序做。</em></h2><p id="route-summary">先解决交易入口，再把长期持有的资产移出平台管理。</p><button class="oc-button primary" id="share">分享这条路线 <span>↗</span></button><small class="share-message" id="share-message"></small></div><div class="route-steps" id="route-steps"></div></section>
 
-      <section class="section wrap" id="about"><div class="trust"><div class="trust-badge">◎</div><div><div class="section-label">04 / FIELD NOTES</div><h2>这是指南，<br>不是推荐榜。</h2><p>这里把复杂的跨境生活拆成可理解的选择。服务条款、费用、地区限制和合规要求都会变化，使用任何入口前请自行核验。</p></div><div class="trust-stats"><span><b>12</b>工具入口</span><span><b>05</b>路线节点</span></div></div></section>
-    </main>
+    <section class="library-section" id="tool-library"><div class="oc-section tool-wrap"><div class="oc-section-head"><div><span class="oc-label">03 / TOOL LIBRARY</span><h2>把入口放在<br><em>该出现的地方。</em></h2></div><p id="count">12 个结果<br>本地筛选，不上传数据</p></div><div class="library-controls"><div class="search-box"><span>⌕</span><input id="search" placeholder="搜索工具、用途或类别" aria-label="搜索工具"></div><button class="filter-button" id="favorites">★ 收藏 0</button><div class="category-pills" id="category-pills"></div></div><div class="tool-grid" id="tool-grid"></div></div></section>
 
-    <footer class="footer wrap"><div class="footer-row"><a class="brand" href="#top"><span class="brand-mark">E</span><span class="brand-copy"><strong>EIANUN FIELD GUIDE</strong><small>做对下一步</small></span></a><div class="footer-links"><a href="#scenarios">场景</a><a href="#route">路线</a><a href="#tools">工具</a><a href="#about">说明</a></div></div><small>© 2026 EIANUN · 内容仅供参考，不构成投资、金融、法律或税务建议。</small></footer>
-  </div>
+    <section class="oc-section" id="about"><div class="privacy-card"><div class="privacy-icon">◎</div><div><span class="oc-label">04 / WHY TRUST THIS</span><h2>真实经历，不是搬运。</h2><p>这里记录跨境生活中真实遇到的问题、踩过的坑，以及整理之后可以复用的方法。收藏、主题和筛选结果只保存在你的设备里，不需要注册。</p></div><div class="privacy-stats"><span><b>12</b>工具入口</span><span><b>05</b>路线节点</span><span><b>100%</b>自查提醒</span></div></div></section>
 
-  <div class="modal-backdrop" id="modal"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="section-label">READ BEFORE ENTERING</div><h2 id="modal-title">先说清楚，再开始。</h2><p>本指南基于公开资料与一般性经验整理，仅用于信息参考，不构成投资、金融、法律或税务建议。服务、费用、地区可用性和政策可能变化，请在使用前自行核验。</p><p>页面可能包含推广链接或邀请码，作者可能因此获得佣金，但不代表对任何产品的保证或推荐。</p><button class="btn btn-primary" id="enter">我已阅读，进入指南　→</button></section></div>
+    <section class="oc-section category-index"><div class="oc-section-head"><div><span class="oc-label">EXPLORE / ALL CATEGORIES</span><h2>完整工具库，<br><em>从这里继续。</em></h2></div><p>四个核心类别，<br>一张路线地图。</p></div><div class="category-index-grid" id="category-index"></div></section>
+
+    <section class="oc-section faq-section" id="faq"><div class="oc-section-head"><div><span class="oc-label">FAQ</span><h2>开始之前，<br><em>先问清楚。</em></h2></div><p>有些问题没有统一答案，<br>但边界应该先写清楚。</p></div><div class="faq-list" id="faq-list"></div></section>
+    <section class="subscribe-section"><div><span class="oc-label">FIELD NOTES</span><h2>想知道下一次更新？</h2><p>留下邮箱，只接收路线、工具和功能更新。没有营销轰炸。</p></div><form id="subscribe"><input required type="email" placeholder="你的邮箱地址" aria-label="邮箱地址"><button class="oc-button primary">订阅更新　↗</button></form></section>
+    <footer class="oc-footer"><div class="footer-top"><button class="oc-brand" data-jump="top"><span class="oc-mark">E</span><span><strong>EIANUN</strong><small>跨境生活行动指南</small></span></button><div class="footer-links"><a href="#scenarios">金融路线图</a><a href="#featured">精选专题</a><a href="#tool-library">完整工具库</a><a href="#about">关于指南</a><a href="https://github.com/illria/eianun-web" target="_blank" rel="noreferrer">GitHub ↗</a></div></div><small>© 2026 EIANUN　·　内容仅供参考，不构成投资、金融、法律或税务建议。</small></footer>
+  </main>
+
+  <div class="oc-modal-backdrop" id="modal"><section class="oc-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><span class="oc-label">READ BEFORE ENTERING</span><h2 id="modal-title">先说清楚，再开始。</h2><p>本指南基于公开资料与一般性经验整理，仅用于信息参考，不构成投资、金融、法律或税务建议。服务、费用、地区可用性和政策可能变化，请在使用前自行核验。</p><p>页面可能包含推广链接或邀请码，作者可能因此获得佣金，但不代表对任何产品的保证或推荐。</p><button class="oc-button primary full" id="enter">我已阅读，进入指南　→</button></section></div>
 
   <script>
+    const scenarios = [
+      {id:'asset',mark:'₿',title:'支付与数字资产',description:'从买入、转账到安全存储，先建立不容易走错的基础路径。',category:'加密交易所',summary:'先解决交易入口，再把长期持有的资产移出平台管理。',steps:['准备连接与身份环境','选择交易与充值入口','建立钱包和备份习惯','复核费用与地区规则']},
+      {id:'market',mark:'↗',title:'港股与美股账户',description:'整理开户、入金、交易和长期持有之间真正需要的环节。',category:'券商',summary:'把开户、入金、交易和长期持有拆开，不被一张宣传图带着走。',steps:['确认所在地和账户资格','比较入金与换汇路径','选择券商和市场范围','建立记录与复核习惯']},
+      {id:'account',mark:'▤',title:'海外账户与转账',description:'多币种收款、换汇和跨境转账，找到适合自己的低摩擦组合。',category:'银行卡',summary:'先确认收款和转账需求，再比较币种、费用、限额和地区可用性。',steps:['明确收款与付款场景','比较多币种账户入口','核对换汇和转账费用','保留交易记录与凭证']},
+      {id:'connect',mark:'⌁',title:'出境连接与号码',description:'eSIM、境外号码与流量，让连接成为基础设施而不是临时救火。',category:'跨境通讯',summary:'连接是所有后续步骤的基础，先准备稳定的号码和网络环境。',steps:['确认目的地和设备支持','比较 eSIM 与实体号码','准备备用连接方案','出发前做一次真实测试']}
+    ];
     const tools = [
-      {mark:'OKX', name:'欧易 OKX', cat:'加密交易所', label:'交易入口', text:'适合先了解现货、转账与基础资产管理。', code:'SOL999', link:'https://www.okx.com'},
-      {mark:'BNB', name:'币安 Binance', cat:'加密交易所', label:'多币种入口', text:'适合需要多币种与长期管理的人。', code:'TALA888', link:'https://www.binance.com'},
-      {mark:'BB', name:'Bybit', cat:'加密交易所', label:'交易与资产', text:'把交易、转账和资产入口集中在一起。', code:'NIFULEI20', link:'https://www.bybit.com'},
-      {mark:'OK', name:'OneKey', cat:'冷钱包', label:'离线保管', text:'将长期持有的资产从交易平台移出管理。', code:'NIFULEI', link:'https://onekey.so'},
-      {mark:'SP', name:'SafePal', cat:'冷钱包', label:'硬件钱包', text:'硬件设备与移动端配合使用的保管方案。', code:'766177', link:'https://www.safepal.com'},
-      {mark:'LGR', name:'Ledger', cat:'冷钱包', label:'专业保管', text:'适合建立更严格的私钥与设备管理习惯。', link:'https://www.ledger.com'},
-      {mark:'U', name:'盈立证券 uSMART', cat:'券商', label:'港美股入口', text:'把开户、入金与交易的基础问题拆开看。', code:'U02662', link:'https://www.usmart.hk'},
-      {mark:'IB', name:'Interactive Brokers', cat:'券商', label:'全球市场', text:'覆盖市场广，适合需要专业工具的人。', link:'https://www.interactivebrokers.com'},
-      {mark:'W', name:'Wise', cat:'银行卡', label:'多币种转账', text:'跨境收款、换汇与转账的常见入口。', link:'https://wise.com'},
-      {mark:'N26', name:'N26', cat:'银行卡', label:'数字银行', text:'欧洲数字银行方向的账户入口。', code:'yanmingk73062c', link:'https://n26.com'},
-      {mark:'GG', name:'giffgaff', cat:'跨境通讯', label:'英国号码', text:'英国号码与流量方案，适合出境连接。', link:'https://www.giffgaff.com'},
-      {mark:'ESK', name:'Eskimo', cat:'跨境通讯', label:'全球 eSIM', text:'短期出境和多地区流量的选择之一。', code:'NIFULEI', link:'https://eskimo.travel'}
+      {name:'欧易 OKX',mark:'OKX',category:'加密交易所',label:'交易入口',detail:'适合先了解现货、转账与基础资产管理。',code:'SOL999',link:'https://www.okx.com'},
+      {name:'币安 Binance',mark:'BNB',category:'加密交易所',label:'多币种入口',detail:'适合需要多币种与长期管理的人。',code:'TALA888',link:'https://www.binance.com'},
+      {name:'Bybit',mark:'BB',category:'加密交易所',label:'交易与资产',detail:'把交易、转账和资产入口集中在一起。',code:'NIFULEI20',link:'https://www.bybit.com'},
+      {name:'OneKey',mark:'OK',category:'冷钱包',label:'离线保管',detail:'将长期持有的资产从交易平台移出管理。',code:'NIFULEI',link:'https://onekey.so'},
+      {name:'SafePal',mark:'SP',category:'冷钱包',label:'硬件钱包',detail:'硬件设备与移动端配合使用的保管方案。',code:'766177',link:'https://www.safepal.com'},
+      {name:'Ledger',mark:'LGR',category:'冷钱包',label:'专业保管',detail:'适合建立更严格的私钥与设备管理习惯。',link:'https://www.ledger.com'},
+      {name:'盈立证券 uSMART',mark:'U',category:'券商',label:'港美股入口',detail:'把开户、入金与交易的基础问题拆开看。',code:'U02662',link:'https://www.usmart.hk'},
+      {name:'Interactive Brokers',mark:'IB',category:'券商',label:'全球市场',detail:'覆盖市场广，适合需要专业工具的人。',link:'https://www.interactivebrokers.com'},
+      {name:'Wise',mark:'W',category:'银行卡',label:'多币种转账',detail:'跨境收款、换汇与转账的常见入口。',link:'https://wise.com'},
+      {name:'N26',mark:'N26',category:'银行卡',label:'数字银行',detail:'欧洲数字银行方向的账户入口。',code:'yanmingk73062c',link:'https://n26.com'},
+      {name:'giffgaff',mark:'GG',category:'跨境通讯',label:'英国号码',detail:'英国号码与流量方案，适合出境连接。',link:'https://www.giffgaff.com'},
+      {name:'Eskimo',mark:'ESK',category:'跨境通讯',label:'全球 eSIM',detail:'短期出境和多地区流量的选择之一。',code:'NIFULEI',link:'https://eskimo.travel'}
     ];
     const categories = ['全部','加密交易所','冷钱包','券商','银行卡','跨境通讯'];
-    let selected = '全部';
-    const grid = document.getElementById('tool-grid');
-    const filters = document.getElementById('filters');
-    const count = document.getElementById('count');
-    function renderFilters(){ filters.innerHTML = '<p>Filter by</p>' + categories.map(cat => '<button class="' + (cat === selected ? 'active' : '') + '" data-filter="' + cat + '">' + cat + '</button>').join(''); }
-    function renderTools(){
-      const list = selected === '全部' ? tools : tools.filter(tool => tool.cat === selected);
-      count.innerHTML = list.length + ' 个入口<br>按场景筛选';
-      grid.innerHTML = list.map(tool => '<article class="tool"><div class="tool-head"><span class="tool-mark">' + tool.mark + '</span><span class="tool-cat">' + tool.cat + '</span></div><h3>' + tool.name + '</h3><strong>' + tool.label + '</strong><p>' + tool.text + '</p>' + (tool.code ? '<div class="code"><span>邀请码 <b>' + tool.code + '</b></span><button data-copy="' + tool.code + '">复制</button></div>' : '<div class="code"><span>官方入口</span><a href="' + tool.link + '" target="_blank" rel="noreferrer">打开 ↗</a></div>') + '<a class="tool-link" href="' + tool.link + '" target="_blank" rel="noreferrer">查看入口　↗</a></article>').join('');
-    }
-    filters.addEventListener('click', event => { const button = event.target.closest('[data-filter]'); if (!button) return; selected = button.dataset.filter; renderFilters(); renderTools(); });
-    document.addEventListener('click', event => { const button = event.target.closest('[data-copy]'); if (!button) return; navigator.clipboard?.writeText(button.dataset.copy); button.textContent = '已复制'; window.setTimeout(() => button.textContent = '复制', 1400); });
-    document.querySelectorAll('[data-category]').forEach(button => button.addEventListener('click', () => { selected = button.dataset.category; renderFilters(); renderTools(); document.getElementById('tools').scrollIntoView({behavior:'smooth'}); }));
-    document.getElementById('theme').addEventListener('click', () => { const site = document.getElementById('site'); site.classList.toggle('dark'); document.getElementById('theme').textContent = site.classList.contains('dark') ? '☼' : '☾'; });
-    document.getElementById('enter').addEventListener('click', () => { sessionStorage.setItem('eianun-guide-entered','1'); document.getElementById('modal').classList.add('hidden'); });
-    if (sessionStorage.getItem('eianun-guide-entered')) document.getElementById('modal').classList.add('hidden');
-    renderFilters(); renderTools();
+    const faqs = [
+      ['这些工具是投资建议吗？','不是。页面只整理公开入口和一般性使用路径，不构成投资、金融、法律或税务建议。服务条款、费用、地区限制和政策可能变化，请使用前自行核验。'],
+      ['为什么工具有邀请码？','部分入口可能包含推广链接或邀请码，作者可能因此获得佣金。邀请码不代表对产品的保证，也不改变你需要自行判断的事实。'],
+      ['我应该从哪里开始？','从首页的场景卡片开始，而不是直接挑品牌。选完场景后，页面会把相关类别筛选出来，再按路线逐步核对。'],
+      ['我的收藏会上传到服务器吗？','不会。收藏、主题和已读提示只保存在当前浏览器的本地存储中；本页没有接入账户系统。'],
+      ['500MB 空间够用吗？','够用。本页是轻量静态站，服务器只负责提供已构建的 HTML、CSS 和 JavaScript，不需要在 500MB 服务器上安装 Node.js。']
+    ];
+    let selected = 'asset'; let category = '全部'; let query = ''; let favoritesOnly = false; let favorites = JSON.parse(localStorage.getItem('eianun-favorites') || '[]');
+    const $ = (id) => document.getElementById(id);
+    const jump = (id) => { $(id)?.scrollIntoView({behavior:'smooth',block:'start'}); $('nav').classList.remove('open'); };
+    function selectScenario(id, shouldJump = true) { const item = scenarios.find(x => x.id === id) || scenarios[0]; selected = id; category = item.category; query = ''; $('search').value = ''; renderScenarios(); renderRoute(); renderTools(); if (shouldJump) jump('tool-library'); }
+    function renderScenarios() { $('scenario-grid').innerHTML = scenarios.map((x,i) => `<button class="scenario-card ${selected === x.id ? 'selected' : ''}" data-scenario="${x.id}"><span class="scenario-number">0${i+1}</span><span class="scenario-mark">${x.mark}</span><h3>${x.title}</h3><p>${x.description}</p><span class="scenario-arrow">进入这条路径　↗</span></button>`).join(''); }
+    function renderRoute() { const item = scenarios.find(x => x.id === selected) || scenarios[0]; $('terminal-goal').textContent = item.id; $('terminal-title').textContent = item.title; $('terminal-route').textContent = item.steps[0] + ' → ' + item.steps[1]; $('terminal-category').textContent = item.category; $('route-title').innerHTML = item.title + '<br><em>按顺序做。</em>'; $('route-summary').textContent = item.summary; $('route-steps').innerHTML = item.steps.map((step,i) => `<button class="${i === 0 ? 'current' : ''}" data-route-category="${i === 1 ? item.category : '全部'}"><span>0${i+1}</span><div><b>${step}</b><small>${i === 0 ? '当前建议' : '下一步核对'}</small></div><i>↗</i></button>`).join(''); }
+    function renderFilters() { $('category-pills').innerHTML = categories.map(x => `<button class="${category === x ? 'active' : ''}" data-category="${x}">${x}</button>`).join(''); $('favorites').className = favoritesOnly ? 'filter-button active' : 'filter-button'; $('favorites').textContent = '★ 收藏 ' + favorites.length; }
+    function renderTools() { const q = query.toLowerCase(); const list = tools.filter(x => (category === '全部' || x.category === category) && (!q || (x.name + x.label + x.detail + x.category).toLowerCase().includes(q)) && (!favoritesOnly || favorites.includes(x.name))); $('count').innerHTML = list.length + ' 个结果<br>本地筛选，不上传数据'; $('tool-grid').innerHTML = list.length ? list.map(x => { const fav = favorites.includes(x.name); return `<article class="tool-card"><div class="tool-card-top"><span class="tool-mark">${x.mark}</span><button class="favorite ${fav ? 'active' : ''}" data-favorite="${x.name}" aria-label="${fav ? '取消收藏' : '收藏'} ${x.name}">★</button></div><span class="tool-category">${x.category}</span><h3>${x.name}</h3><strong>${x.label}</strong><p>${x.detail}</p>${x.code ? `<div class="code-row"><span>邀请码 <b>${x.code}</b></span><button data-copy="${x.code}">${window.__copied === x.code ? '已复制' : '复制'}</button></div>` : `<div class="code-row"><span>官方入口</span><a href="${x.link}" target="_blank" rel="noreferrer">打开 ↗</a></div>`}<a class="tool-link" href="${x.link}" target="_blank" rel="noreferrer">查看官方入口　↗</a></article>`; }).join('') : '<div class="empty-state">没有找到匹配入口。试试清空搜索或切换类别。</div>'; }
+    function renderCategoryIndex() { $('category-index').innerHTML = scenarios.map(x => `<button data-scenario-index="${x.id}"><span>${x.mark}</span><div><b>${x.title}</b><small>${x.category} · 相关入口</small></div><i>↗</i></button>`).join(''); }
+    function renderFaq() { $('faq-list').innerHTML = faqs.map((x,i) => `<div class="faq-item ${i === 0 ? 'open' : ''}"><button data-faq="${i}"><span>${x[0]}</span><b>${i === 0 ? '−' : '+'}</b></button><p ${i === 0 ? '' : 'hidden'}>${x[1]}</p></div>`).join(''); }
+    document.addEventListener('click', event => { const target = event.target.closest('[data-jump],[data-scenario],[data-scenario-index],[data-category],[data-route-category],[data-favorite],[data-copy],[data-faq]'); if (!target) return; if (target.dataset.jump) jump(target.dataset.jump); if (target.dataset.scenario) selectScenario(target.dataset.scenario); if (target.dataset.scenarioIndex) selectScenario(target.dataset.scenarioIndex); if (target.dataset.category) { category = target.dataset.category; renderFilters(); renderTools(); } if (target.dataset.routeCategory) { category = target.dataset.routeCategory; renderFilters(); renderTools(); jump('tool-library'); } if (target.dataset.favorite) { favorites = favorites.includes(target.dataset.favorite) ? favorites.filter(x => x !== target.dataset.favorite) : [...favorites, target.dataset.favorite]; localStorage.setItem('eianun-favorites', JSON.stringify(favorites)); renderTools(); renderFilters(); } if (target.dataset.copy) { navigator.clipboard?.writeText(target.dataset.copy); window.__copied = target.dataset.copy; renderTools(); window.setTimeout(() => { window.__copied = ''; renderTools(); }, 1400); } if (target.dataset.faq) { const item = target.closest('.faq-item'); const open = item.classList.toggle('open'); item.querySelector('p').hidden = !open; item.querySelector('b').textContent = open ? '−' : '+'; } });
+    $('search').addEventListener('input', event => { query = event.target.value; renderTools(); }); $('favorites').addEventListener('click', () => { favoritesOnly = !favoritesOnly; renderFilters(); renderTools(); }); $('theme').addEventListener('click', () => { $('site').classList.toggle('dark'); localStorage.setItem('eianun-theme', $('site').classList.contains('dark') ? 'dark' : 'light'); $('theme').textContent = $('site').classList.contains('dark') ? '☼' : '◐'; }); $('menu').addEventListener('click', () => $('nav').classList.toggle('open')); $('enter').addEventListener('click', () => { sessionStorage.setItem('eianun-guide-entered','1'); $('modal').classList.add('hidden'); }); $('share').addEventListener('click', () => { navigator.clipboard?.writeText(location.href.split('#')[0] + '#scenario=' + selected); $('share-message').textContent = '路线链接已复制'; window.setTimeout(() => $('share-message').textContent = '', 1800); }); $('subscribe').addEventListener('submit', event => { event.preventDefault(); event.target.innerHTML = '<div class="subscribed">✓ 已加入更新列表</div>'; });
+    if (localStorage.getItem('eianun-theme') === 'dark') { $('site').classList.add('dark'); $('theme').textContent = '☼'; } if (sessionStorage.getItem('eianun-guide-entered')) $('modal').classList.add('hidden'); renderScenarios(); renderRoute(); renderFilters(); renderTools(); renderCategoryIndex(); renderFaq();
   </script>
 </body>
 </html>
