@@ -28,4 +28,23 @@ npm run build
 
 - `npm run dev`: 启动本地开发服务
 - `npm run build`: 构建可部署版本
+- `npm run build:static`: 生成 Alpine 服务器使用的纯静态包
 - `npm test`: 构建并检查首页服务端渲染内容
+
+## 500MB Alpine 服务器一键安装与更新
+
+GitHub Actions 会在云端完成依赖安装、页面构建和静态包发布。服务器不需要安装 Node、npm、pnpm、Git 或 Docker。
+
+首次安装（等待 GitHub Actions 成功后执行）：
+
+```bash
+busybox wget -qO- https://raw.githubusercontent.com/illria/eianun-web/main/server/install.sh | sh
+```
+
+以后更新：
+
+```bash
+/usr/local/sbin/eianun-web-update
+```
+
+脚本会从 `gh-pages` 分支下载最新静态包，用 BusyBox `httpd` 在 80 端口提供网页，并注册为 Alpine OpenRC 服务。若 80 端口被占用，可先修改 `/etc/conf.d/eianun-web` 的 `EIANUN_WEB_PORT`。

@@ -1,0 +1,42 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+  echo "请使用 root 执行此命令。" >&2
+  exit 1
+fi
+
+if ! command -v wget >/dev/null 2>&1; then
+  apk add --no-cache ca-certificates wget
+fi
+
+apk add --no-cache ca-certificates >/dev/null
+mkdir -p /opt/eianun-web
+
+wget -qO /usr/local/sbin/eianun-web-update \
+  https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh
+chmod 0755 /usr/local/sbin/eianun-web-update
+
+cat > /etc/conf.d/eianun-web <<'CONF'
+EIANUN_WEB_DIR="/opt/eianun-web"
+EIANUN_WEB_PORT="80"
+CONF
+
+cat > /etc/init.d/eianun-web <<'SERVICE'
+#!/sbin/openrc-run
+
+command="/usr/bin/busybox"
+command_args="httpd -f -p ${EIANUN_WEB_PORT} -h ${EIANUN_WEB_DIR}"
+command_background="yes"
+
+depend() {
+  need net
+}
+SERVICE
+chmod 0755 /etc/init.d/eianun-web
+
+/usr/local/sbin/eianun-web-update
+rc-update add eianun-web default >/dev/null 2>&1 || true
+rc-service eianun-web restart || rc-service eianun-web start
+
+echo "EIANUN 网站已安装并启动：http://$(hostname -i | awk '{print $1}'):${EIANUN_WEB_PORT}"
