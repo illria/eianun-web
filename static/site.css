@@ -101,6 +101,21 @@ a { color: inherit; text-decoration: none; }
 .tool-mark-fallback { display: none; }
 .tool-mark img[style*="display: none"] + .tool-mark-fallback { display: block; }
 
+/* Final override: keep every brand mark local, contained, and predictable. */
+.tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
+.tool-mark img { display: none !important; }
+.tool-mark-fallback { color: inherit !important; display: block !important; }
+
+/* Stable local brand marks: remote favicons must never change card geometry. */
+.tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
+.tool-mark img { display: none !important; }
+.tool-mark-fallback { color: inherit !important; display: block !important; }
+
+/* External favicons are intentionally not rendered: some providers return oversized or non-image documents. */
+.tool-mark { background: var(--ink); color: var(--paper); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
+.tool-mark img { display: none !important; }
+.tool-mark-fallback { color: inherit; display: block !important; }
+
 /* Final contrast and logo normalization: keep branded marks inside one visual system. */
 .terminal-card, .subscribe-section { background: #151514; color: #f1f1ed; }
 .terminal-card .terminal-success { color: #deded6; }
@@ -112,3 +127,8 @@ a { color: inherit; text-decoration: none; }
 .tool-mark img { border-radius: 5px; display: block; filter: grayscale(1) contrast(1.15); height: auto; max-height: 28px; max-width: 28px; object-fit: contain; width: auto; }
 .tool-mark-fallback { color: #171715; display: none; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; line-height: 1; }
 .tool-mark img[style*="display: none"] + .tool-mark-fallback { display: block; }
+
+/* Final override: keep every brand mark local, contained, and predictable. */
+.tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
+.tool-mark img { display: none !important; }
+.tool-mark-fallback { color: inherit !important; display: block !important; }
