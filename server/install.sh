@@ -13,8 +13,13 @@ fi
 apk add --no-cache ca-certificates >/dev/null
 mkdir -p /opt/eianun-web
 
-wget -qO /usr/local/sbin/eianun-web-update   https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh
+UPDATE_TMP="$(mktemp /tmp/eianun-web-update.XXXXXX)"
+wget -qO "$UPDATE_TMP" \
+  https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh
+tr -d '\r' < "$UPDATE_TMP" > /usr/local/sbin/eianun-web-update
+rm -f "$UPDATE_TMP"
 chmod 0755 /usr/local/sbin/eianun-web-update
+test -s /usr/local/sbin/eianun-web-update
 
 cat > /etc/conf.d/eianun-web <<'CONF'
 EIANUN_WEB_DIR="/opt/eianun-web"
