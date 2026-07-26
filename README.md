@@ -47,4 +47,4 @@ busybox wget -qO- https://raw.githubusercontent.com/illria/eianun-web/main/serve
 /usr/local/sbin/eianun-web-update
 ```
 
-脚本会从 `gh-pages` 分支下载最新静态包，用 BusyBox `httpd` 在 80 端口提供网页，并注册为 Alpine OpenRC 服务。若 80 端口被占用，可先修改 `/etc/conf.d/eianun-web` 的 `EIANUN_WEB_PORT`。
+脚本会从 `gh-pages` 分支下载最新静态包，用 BusyBox `httpd` 在 9191 端口提供网页，并注册为 Alpine OpenRC 服务。若 9191 端口被占用，可先修改 `/etc/conf.d/eianun-web` 的 `EIANUN_WEB_PORT`。
