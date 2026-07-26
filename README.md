@@ -5,9 +5,9 @@
 ## 本地运行
 
 ```bash
-npm install
-npm run dev
-npm run build
+pnpm install --frozen-lockfile
+pnpm run dev
+pnpm run build
 ```
 
 页面不依赖数据库、上传存储或常驻 API。邀请码复制、分类筛选、深浅色切换和免责声明只使用浏览器端交互。
@@ -26,10 +26,10 @@ npm run build
 
 ## Useful commands
 
-- `npm run dev`: 启动本地开发服务
-- `npm run build`: 构建可部署版本
-- `npm run build:static`: 生成 Alpine 服务器使用的纯静态包
-- `npm test`: 构建并检查首页服务端渲染内容
+- `pnpm run dev`: 启动本地开发服务
+- `pnpm run build`: 构建可部署版本
+- `pnpm run build:static`: 生成 Alpine 服务器使用的纯静态包
+- `pnpm test`: 构建并检查首页服务端渲染内容
 
 ## 500MB Alpine 服务器一键安装与更新
 
