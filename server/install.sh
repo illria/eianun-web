@@ -11,6 +11,7 @@ if ! command -v wget >/dev/null 2>&1; then
 fi
 
 apk add --no-cache ca-certificates >/dev/null
+apk add --no-cache busybox-extras >/dev/null
 mkdir -p /opt/eianun-web
 mkdir -p /usr/local/sbin
 
@@ -30,7 +31,7 @@ CONF
 cat > /etc/init.d/eianun-web <<'SERVICE'
 #!/sbin/openrc-run
 
-command="/bin/busybox"
+command="/bin/busybox-extras"
 command_args="httpd -f -p ${EIANUN_WEB_PORT} -h ${EIANUN_WEB_DIR}"
 command_background="yes"
 pidfile="/run/eianun-web.pid"
