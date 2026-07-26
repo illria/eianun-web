@@ -59,7 +59,7 @@ a { color: inherit; text-decoration: none; }
 .oc-hero-meta span { color: var(--muted); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; }
 .oc-hero-meta b { color: var(--ink); display: block; font-family: inherit; font-size: 22px; margin-bottom: 4px; }
 
-.terminal-card { background: var(--inverse); color: var(--inverse-2); min-height: 380px; }
+.terminal-card { background: #151514; color: #dfdfd8; min-height: 380px; }
 .terminal-bar { align-items: center; border-bottom: 1px solid var(--inverse-line); color: #999991; display: flex; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; justify-content: space-between; padding: 13px 15px; }
 .traffic { display: flex; gap: 5px; }.traffic i { background: #77776f; border-radius: 50%; height: 7px; width: 7px; }.traffic i:first-child { background: var(--lime); }
 .terminal-body { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; line-height: 1.8; padding: 34px 26px; }
