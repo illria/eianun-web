@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "泥伏雷闯关记 · 出海金融第一站",
-  description: "把跨境金融、海外账户、加密资产与通讯工具整理成一张可执行的路线图。",
+  title: "EIANUN Field Guide · 出海行动指南",
+  description: "把海外账户、支付、资产与通讯拆成清晰、可执行的下一步。",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 
