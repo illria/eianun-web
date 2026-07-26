@@ -102,10 +102,14 @@ a { color: inherit; text-decoration: none; }
 .tool-mark-fallback { display: none; }
 .tool-mark img[style*="display: none"] + .tool-mark-fallback { display: block; }
 
-/* Final override: keep every brand mark local, contained, and predictable. */
+/* Earlier final override: keep every brand mark local, contained, and predictable. */
 .tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
 .tool-mark img { display: none !important; }
 .tool-mark-fallback { color: inherit !important; display: block !important; }
+
+/* Final original appearance. */
+.tool-mark { align-items: center; background: var(--lime) !important; border: 0 !important; border-radius: 0 !important; color: #111 !important; display: inline-flex; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; height: 32px !important; justify-content: center; min-width: 40px !important; padding: 0 5px !important; width: auto !important; }
+.tool-mark-fallback { color: #111 !important; display: block !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; line-height: 1; }
 
 /* Stable local brand marks: remote favicons must never change card geometry. */
 .tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
@@ -116,6 +120,10 @@ a { color: inherit; text-decoration: none; }
 .tool-mark { background: var(--ink); color: var(--paper); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
 .tool-mark img { display: none !important; }
 .tool-mark-fallback { color: inherit; display: block !important; }
+
+/* Original tool marks: simple lime tiles with readable abbreviations. */
+.tool-mark { align-items: center; background: var(--lime) !important; border: 0 !important; border-radius: 0 !important; color: #111 !important; display: inline-flex; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; height: 32px !important; justify-content: center; min-width: 40px !important; padding: 0 5px !important; width: auto !important; }
+.tool-mark-fallback { color: #111 !important; display: block !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; line-height: 1; }
 
 /* Final contrast and logo normalization: keep branded marks inside one visual system. */
 .terminal-card, .subscribe-section { background: #151514; color: #f1f1ed; }
@@ -133,3 +141,7 @@ a { color: inherit; text-decoration: none; }
 .tool-mark { background: var(--ink) !important; color: var(--paper) !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; letter-spacing: -.04em; }
 .tool-mark img { display: none !important; }
 .tool-mark-fallback { color: inherit !important; display: block !important; }
+
+/* Restore the original lime tile appearance. */
+.tool-mark { align-items: center; background: var(--lime) !important; border: 0 !important; border-radius: 0 !important; color: #111 !important; display: inline-flex; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; height: 32px !important; justify-content: center; min-width: 40px !important; padding: 0 5px !important; width: auto !important; }
+.tool-mark-fallback { color: #111 !important; display: block !important; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10px; font-weight: 900; line-height: 1; }
