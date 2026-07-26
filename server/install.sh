@@ -30,7 +30,7 @@ CONF
 cat > /etc/init.d/eianun-web <<'SERVICE'
 #!/sbin/openrc-run
 
-command="/usr/bin/busybox"
+command="/bin/busybox"
 command_args="httpd -f -p ${EIANUN_WEB_PORT} -h ${EIANUN_WEB_DIR}"
 command_background="yes"
 pidfile="/run/eianun-web.pid"
