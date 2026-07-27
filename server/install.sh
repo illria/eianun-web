@@ -18,8 +18,7 @@ mkdir -p "$EIANUN_WEB_DIR"
 mkdir -p /usr/local/sbin
 
 UPDATE_TMP="$(mktemp /tmp/eianun-web-update.XXXXXX)"
-wget -qO "$UPDATE_TMP" \
-  "https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh?cache=$(date +%s)"
+wget -qO "$UPDATE_TMP" "https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh?cache=$(date +%s)"
 tr -d '\r' < "$UPDATE_TMP" > /usr/local/sbin/eianun-web-update
 rm -f "$UPDATE_TMP"
 chmod 0755 /usr/local/sbin/eianun-web-update
