@@ -244,7 +244,8 @@
     render();
   });
 
-  fetch(new URL("site-data.json", document.baseURI))
+  const scriptUrl = document.currentScript?.src || document.baseURI;
+  fetch(new URL("site-data.json", scriptUrl))
     .then((response) => {
       if (!response.ok) throw new Error(`data ${response.status}`);
       return response.json();
