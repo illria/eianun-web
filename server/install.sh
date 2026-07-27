@@ -12,7 +12,9 @@ fi
 
 apk add --no-cache ca-certificates >/dev/null
 apk add --no-cache busybox-extras >/dev/null
-mkdir -p /opt/eianun-web
+EIANUN_WEB_DIR="${EIANUN_WEB_DIR:-/opt/eianun-web}"
+EIANUN_WEB_PORT="${EIANUN_WEB_PORT:-9191}"
+mkdir -p "$EIANUN_WEB_DIR"
 mkdir -p /usr/local/sbin
 
 UPDATE_TMP="$(mktemp /tmp/eianun-web-update.XXXXXX)"
