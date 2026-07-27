@@ -244,7 +244,7 @@
     render();
   });
 
-  fetch("/site-data.json")
+  fetch(new URL("site-data.json", document.baseURI))
     .then((response) => {
       if (!response.ok) throw new Error(`data ${response.status}`);
       return response.json();
