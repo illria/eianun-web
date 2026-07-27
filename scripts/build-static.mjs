@@ -11,6 +11,9 @@ const inlineStyles = (html) => html.replace(
   '  <link rel="stylesheet" href="./site.css">\n',
   `  <style>\n${stylesheet}\n  </style>\n`
 );
+const routeHtml = (html) => inlineStyles(html)
+  .replace('href="./favicon.svg"', 'href="../favicon.svg"')
+  .replace('src="./site.js"', 'src="../site.js"');
 
 const rootHtml = await readFile("dist-static/index.html", "utf8");
 await writeFile("dist-static/index.html", inlineStyles(rootHtml));
@@ -28,7 +31,7 @@ const routes = [
 
 for (const route of routes) {
   await mkdir(`dist-static/${route}`, { recursive: true });
-  await writeFile(`dist-static/${route}/index.html`, inlineStyles(await readFile("static/index.html", "utf8")));
+  await writeFile(`dist-static/${route}/index.html`, routeHtml(await readFile("static/index.html", "utf8")));
 }
 
 console.log(`Static site written to dist-static (${routes.length + 1} routes)`);
