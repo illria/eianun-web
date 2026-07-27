@@ -1,3 +1,22 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -ne 0 ]; then
+  echo "请使用 root 执行此命令。" >&2
+  exit 1
+fi
+
+if ! command -v wget >/dev/null 2>&1; then
+  apk add --no-cache ca-certificates wget
+fi
+
+apk add --no-cache ca-certificates >/dev/null
+apk add --no-cache busybox-extras >/dev/null
+mkdir -p /opt/eianun-web
+mkdir -p /usr/local/sbin
+
+UPDATE_TMP="$(mktemp /tmp/eianun-web-update.XXXXXX)"
+wget -qO "$UPDATE_TMP" \
   "https://raw.githubusercontent.com/illria/eianun-web/main/server/eianun-web-update.sh?cache=$(date +%s)"
 tr -d '\r' < "$UPDATE_TMP" > /usr/local/sbin/eianun-web-update
 rm -f "$UPDATE_TMP"
