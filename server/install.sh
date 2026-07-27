@@ -37,7 +37,7 @@ cat > /etc/init.d/eianun-web <<'SERVICE'
 : "${EIANUN_WEB_PORT:=9191}"
 
 command="/bin/busybox-extras"
-command_args="httpd -f -p ${EIANUN_WEB_PORT} -h ${EIANUN_WEB_DIR}"
+command_args="httpd -f -p ${EIANUN_WEB_PORT:-9191} -h ${EIANUN_WEB_DIR:-/opt/eianun-web}"
 command_background="yes"
 pidfile="/run/eianun-web.pid"
 
