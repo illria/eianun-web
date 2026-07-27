@@ -5,6 +5,10 @@ on:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: eianun-pages-publish
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
