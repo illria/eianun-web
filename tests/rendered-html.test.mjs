@@ -30,28 +30,38 @@ test("server-renders the EIANUN route map homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>泥伏雷闯关记 · 出海金融第一站<\/title>/i);
+  assert.match(html, /<title>EIANUN · 出海金融行动指南<\/title>/i);
   assert.match(html, /普通人的/);
-  assert.match(html, /海外资金/);
-  assert.match(html, /新人必备工具/);
-  assert.match(html, /免责声明/);
+  assert.match(html, /全球资金通关图/);
+  assert.match(html, /新人常用工具/);
+  assert.match(html, /8 关出海行动路线/);
   assert.doesNotMatch(html, /Your site is taking shape|react-loading-skeleton|codex-preview/i);
 });
 
 test("keeps starter preview infrastructure out of the finished site", async () => {
-  const [css, page, layout, packageJson] = await Promise.all([
+  const [css, page, siteApp, layout, packageJson, siteData, staticScript] = await Promise.all([
     readFile(new URL("../app/globals.css", import.meta.url), "utf8"),
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../app/site-app.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
+    readFile(new URL("../public/site-data.json", import.meta.url), "utf8"),
+    readFile(new URL("../static/site.js", import.meta.url), "utf8"),
   ]);
 
-  assert.match(page, /use client/);
-  assert.match(page, /eianun-theme/);
-  assert.match(page, /sessionStorage/);
-  assert.match(css, /\.site-shell/);
-  assert.match(css, /@media \(max-width: 500px\)/);
+  const data = JSON.parse(siteData);
+  assert.match(page, /SiteApp/);
+  assert.match(siteApp, /use client/);
+  assert.match(siteApp, /eianun-theme/);
+  assert.match(siteApp, /sessionStorage/);
+  assert.match(siteApp, /nifulei-journey/);
+  assert.match(css, /\.journey-layout/);
+  assert.match(css, /@media \(max-width: 680px\)/);
+  assert.match(staticScript, /roadmapPage/);
+  assert.equal(Object.keys(data.categoryPages).length, 4);
+  assert.ok(data.tools.length >= 35);
+  assert.equal(data.journey.length, 8);
   assert.match(layout, /lang="zh-CN"/);
-  assert.match(layout, /泥伏雷闯关记/);
-  assert.doesNotMatch(page + layout + css + packageJson, /SkeletonPreview|codex-preview|Starter Project/);
+  assert.match(layout, /EIANUN · 出海金融行动指南/);
+  assert.doesNotMatch(page + siteApp + layout + css + packageJson, /SkeletonPreview|codex-preview|Starter Project/);
 });

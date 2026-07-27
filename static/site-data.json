@@ -1,0 +1,761 @@
+{
+  "navigation": [
+    {
+      "label": "国外银行卡",
+      "href": "/nifulei-bank",
+      "items": [
+        ["国际账户", "/nifulei-bank#intl"],
+        ["香港地区银行卡", "/nifulei-bank#hk"],
+        ["美国银行卡", "/nifulei-bank#us"],
+        ["开户辅助", "/nifulei-bank#cn"]
+      ]
+    },
+    {
+      "label": "港美股券商",
+      "href": "/nifulei-broker",
+      "items": [
+        ["港股券商", "/nifulei-broker#hk"],
+        ["美股券商", "/nifulei-broker#us"],
+        ["链上美股", "/nifulei-broker#chain"]
+      ]
+    },
+    {
+      "label": "加密 Web3",
+      "href": "/nifulei-crypto",
+      "items": [
+        ["交易所", "/nifulei-crypto#exchange"],
+        ["去中心化交易所", "/nifulei-crypto#dex"],
+        ["加密银行卡", "/nifulei-crypto#card"],
+        ["冷热钱包", "/nifulei-crypto#cold"]
+      ]
+    },
+    {
+      "label": "跨境通讯",
+      "href": "/nifulei-esim",
+      "items": [
+        ["境外号码", "/nifulei-esim#esim-num"],
+        ["eSIM 流量平台", "/nifulei-esim#esim-data"],
+        ["eSIM 写卡器", "/nifulei-esim#esim-writer"]
+      ]
+    },
+    {
+      "label": "路线图",
+      "href": "/nifulei-roadmap",
+      "items": [
+        ["金融路线图", "/nifulei-roadmap"],
+        ["8 关出海路线", "/nifulei-journey"]
+      ]
+    },
+    {
+      "label": "关于",
+      "href": "/nifulei-about",
+      "items": [
+        ["项目说明", "/nifulei-about#origin"],
+        ["联系方式", "/nifulei-about#contact"],
+        ["支持项目", "/nifulei-about#donate"],
+        ["副业合伙人", "/nifulei-partner"]
+      ]
+    }
+  ],
+  "offers": [
+    "OKX 邀请码 SOL999",
+    "Binance 邀请码 TALA888",
+    "Bybit 邀请码 NIFULEI20",
+    "Bitget 邀请码 nifulei20",
+    "OneKey 折扣码 NIFULEI",
+    "SafePal 邀请码 766177",
+    "长桥证券邀请码 32V2M2",
+    "Eskimo 邀请码 NIFULEI"
+  ],
+  "tools": [
+    {
+      "id": "okx",
+      "name": "欧易 OKX",
+      "mark": "OKX",
+      "category": "crypto",
+      "group": "exchange",
+      "label": "综合交易入口",
+      "detail": "现货、合约、链上钱包与法币入口较完整，中文使用路径清晰。",
+      "code": "SOL999",
+      "link": "https://www.promooboost.com/join/SOL999",
+      "rating": "5.0",
+      "badge": "常用"
+    },
+    {
+      "id": "binance",
+      "name": "币安 Binance",
+      "mark": "BNB",
+      "category": "crypto",
+      "group": "exchange",
+      "label": "多币种与高流动性",
+      "detail": "币种覆盖广，适合作为多币种交易和长期资产管理入口。",
+      "code": "TALA888",
+      "link": "https://www.binance.com/zh-CN/join?ref=TALA888",
+      "rating": "5.0",
+      "badge": "主流"
+    },
+    {
+      "id": "bybit",
+      "name": "Bybit",
+      "mark": "BB",
+      "category": "crypto",
+      "group": "exchange",
+      "label": "衍生品与资产账户",
+      "detail": "交易、转账和资产入口集中，适合需要一体化操作的人。",
+      "code": "NIFULEI20",
+      "link": "https://partner.bybit.com/b/NIFULEI20",
+      "rating": "4.8",
+      "badge": "全能"
+    },
+    {
+      "id": "bitget",
+      "name": "Bitget",
+      "mark": "BG",
+      "category": "crypto",
+      "group": "exchange",
+      "label": "跟单与合约",
+      "detail": "跟单工具完整，适合希望观察策略和衍生品市场的用户。",
+      "code": "nifulei20",
+      "link": "https://partner.hdmune.cn/bg/nifulei20",
+      "rating": "4.5",
+      "badge": "跟单"
+    },
+    {
+      "id": "gate",
+      "name": "Gate.io",
+      "mark": "GATE",
+      "category": "crypto",
+      "group": "exchange",
+      "label": "长尾币种入口",
+      "detail": "长尾资产覆盖较多，使用前应额外核对流动性和风险。",
+      "code": "TALAUSDT",
+      "link": "https://www.gate.io/",
+      "rating": "4.0",
+      "badge": "币种多"
+    },
+    {
+      "id": "uniswap",
+      "name": "Uniswap",
+      "mark": "UNI",
+      "category": "crypto",
+      "group": "dex",
+      "kind": "spot",
+      "label": "现货 AMM",
+      "detail": "以太坊生态常用去中心化兑换入口，使用钱包直接连接。",
+      "link": "https://app.uniswap.org/",
+      "rating": "4.8",
+      "wallets": ["MetaMask", "Rabby", "WalletConnect", "Coinbase Wallet"]
+    },
+    {
+      "id": "pancake",
+      "name": "PancakeSwap",
+      "mark": "CAKE",
+      "category": "crypto",
+      "group": "dex",
+      "kind": "spot",
+      "label": "多链 AMM",
+      "detail": "BNB Chain 等多链常用兑换入口，手续费与网络选择更灵活。",
+      "link": "https://pancakeswap.finance/",
+      "rating": "4.5",
+      "wallets": ["MetaMask", "Trust Wallet", "SafePal", "WalletConnect"]
+    },
+    {
+      "id": "oneinch",
+      "name": "1inch",
+      "mark": "1IN",
+      "category": "crypto",
+      "group": "dex",
+      "kind": "spot",
+      "label": "聚合交易",
+      "detail": "聚合多个流动性来源，适合比较路由和滑点。",
+      "link": "https://app.1inch.io/",
+      "rating": "4.3",
+      "wallets": ["MetaMask", "Rabby", "Ledger", "WalletConnect"]
+    },
+    {
+      "id": "hyperliquid",
+      "name": "Hyperliquid",
+      "mark": "HYP",
+      "category": "crypto",
+      "group": "dex",
+      "kind": "perp",
+      "label": "链上永续合约",
+      "detail": "面向高频和衍生品用户的链上订单簿交易入口。",
+      "link": "https://app.hyperliquid.xyz/",
+      "rating": "4.6",
+      "wallets": ["MetaMask", "Rabby", "WalletConnect"]
+    },
+    {
+      "id": "dydx",
+      "name": "dYdX",
+      "mark": "DYDX",
+      "category": "crypto",
+      "group": "dex",
+      "kind": "perp",
+      "label": "去中心化衍生品",
+      "detail": "老牌链上永续合约平台，适合有经验的交易者。",
+      "link": "https://dydx.trade/",
+      "rating": "4.2",
+      "wallets": ["MetaMask", "Keplr", "WalletConnect"]
+    },
+    {
+      "id": "redotpay",
+      "name": "RedotPay",
+      "mark": "RDP",
+      "category": "crypto",
+      "group": "card",
+      "label": "加密支付卡",
+      "detail": "连接数字资产与日常消费的卡片入口，开通前核对地区与费用。",
+      "link": "https://www.redotpay.com/",
+      "rating": "4.0",
+      "badge": "支付"
+    },
+    {
+      "id": "onekey",
+      "name": "OneKey",
+      "mark": "OK",
+      "category": "crypto",
+      "group": "cold",
+      "label": "开源硬件钱包",
+      "detail": "适合把长期持有资产从交易平台移出并建立离线备份。",
+      "code": "NIFULEI",
+      "link": "https://onekey.so/r/NIFULEI",
+      "rating": "4.8",
+      "badge": "常用"
+    },
+    {
+      "id": "safepal",
+      "name": "SafePal",
+      "mark": "SP",
+      "category": "crypto",
+      "group": "cold",
+      "label": "软硬件协同钱包",
+      "detail": "硬件设备与移动端组合使用，支持多链资产管理。",
+      "code": "766177",
+      "link": "https://www.safepal.com/store/s1?ref=yjnmywv",
+      "rating": "4.5",
+      "badge": "多链"
+    },
+    {
+      "id": "ledger",
+      "name": "Ledger",
+      "mark": "LGR",
+      "category": "crypto",
+      "group": "cold",
+      "label": "专业硬件钱包",
+      "detail": "资产覆盖广，适合建立严格的私钥与设备管理习惯。",
+      "link": "https://shop.ledger.com/?r=978a08f57a21",
+      "rating": "4.5",
+      "badge": "专业"
+    },
+    {
+      "id": "tangem",
+      "name": "Tangem",
+      "mark": "TGM",
+      "category": "crypto",
+      "group": "cold",
+      "label": "卡片式冷钱包",
+      "detail": "便携、上手快，适合不希望使用传统硬件设备的人。",
+      "code": "TALAKANG",
+      "link": "https://tangem.com/invite/TALAKANG",
+      "rating": "4.2",
+      "badge": "便携"
+    },
+    {
+      "id": "metamask",
+      "name": "MetaMask",
+      "mark": "MM",
+      "category": "crypto",
+      "group": "hot",
+      "label": "浏览器热钱包",
+      "detail": "EVM 生态常用钱包，适合连接 DEX 与各类链上应用。",
+      "link": "https://metamask.io/",
+      "rating": "4.2"
+    },
+    {
+      "id": "rabby",
+      "name": "Rabby Wallet",
+      "mark": "RB",
+      "category": "crypto",
+      "group": "hot",
+      "label": "交易预览热钱包",
+      "detail": "交易模拟和风险提示更清晰，适合频繁使用链上应用。",
+      "link": "https://rabby.io/",
+      "rating": "4.6"
+    },
+    {
+      "id": "longbridge",
+      "name": "长桥证券 Longbridge",
+      "mark": "LB",
+      "category": "broker",
+      "group": "hk",
+      "label": "港美股综合券商",
+      "detail": "界面清晰、社区活跃，支持港股、美股与期权。",
+      "code": "32V2M2",
+      "altCode": "AVZT6A",
+      "link": "https://longbridge.com/",
+      "rating": "4.8",
+      "badge": "双地区"
+    },
+    {
+      "id": "usmart",
+      "name": "盈立证券 uSMART",
+      "mark": "U",
+      "category": "broker",
+      "group": "hk",
+      "label": "港美股低佣入口",
+      "detail": "开户流程清晰，数据工具丰富，适合新手建立第一套券商账户。",
+      "code": "U02662",
+      "link": "https://m.usmart66.com/webapp/open-account/apply.html?ICode=U02662#/register",
+      "rating": "4.5",
+      "badge": "新人"
+    },
+    {
+      "id": "fsmone",
+      "name": "FSMone",
+      "mark": "FSM",
+      "category": "broker",
+      "group": "hk",
+      "label": "基金与证券账户",
+      "detail": "覆盖证券、基金与债券，适合希望集中管理多类资产的人。",
+      "code": "NIFULEI",
+      "link": "https://www.fsmone.com.hk/",
+      "rating": "4.2"
+    },
+    {
+      "id": "ibkr",
+      "name": "Interactive Brokers",
+      "mark": "IB",
+      "category": "broker",
+      "group": "us",
+      "label": "全球市场专业券商",
+      "detail": "市场覆盖广、费率体系专业，适合进阶投资者。",
+      "code": "yanming865",
+      "link": "https://ibkr.com/referral/yanming865",
+      "rating": "4.7",
+      "badge": "全球"
+    },
+    {
+      "id": "schwab",
+      "name": "Charles Schwab",
+      "mark": "CS",
+      "category": "broker",
+      "group": "us",
+      "label": "美股老牌券商",
+      "detail": "适合长期投资者，开户资格与地区要求需提前确认。",
+      "code": "REFERF8MARZGG",
+      "link": "https://www.schwab.com/client-referral?refrid=REFERF8MARZGG",
+      "rating": "4.5"
+    },
+    {
+      "id": "bbae",
+      "name": "BBAE",
+      "mark": "BB",
+      "category": "broker",
+      "group": "us",
+      "label": "华人友好美股券商",
+      "detail": "中文体验完整，适合第一次开通美股账户的人。",
+      "code": "stcb8stkb",
+      "link": "https://landing.bbaecache.com/m/h5/new-user-reward-v4?lang=zh-CN&f=invite&referral=stcb8stkb",
+      "rating": "4.0"
+    },
+    {
+      "id": "tokenized",
+      "name": "链上美股工具",
+      "mark": "TKN",
+      "category": "broker",
+      "group": "chain",
+      "label": "代币化股票入口",
+      "detail": "使用钱包接入代币化股票市场，需理解资产发行与托管边界。",
+      "link": "https://tokenizedstocks.nifulei.com/",
+      "rating": "4.0",
+      "badge": "新玩法"
+    },
+    {
+      "id": "wise",
+      "name": "Wise",
+      "mark": "W",
+      "category": "bank",
+      "group": "intl",
+      "label": "多币种收付款",
+      "detail": "支持多币种余额、本地收款账号和透明换汇费率。",
+      "link": "https://wise.com/register?referralCode=haiyang27",
+      "rating": "5.0",
+      "badge": "推荐"
+    },
+    {
+      "id": "ifast",
+      "name": "iFAST Global Bank",
+      "mark": "IF",
+      "category": "bank",
+      "group": "intl",
+      "label": "英国多币种账户",
+      "detail": "适合跨境转账与资产配置，开户前确认居住地资格。",
+      "link": "https://www.ifastgb.com/tellafriend/yanjunk5073",
+      "rating": "4.5",
+      "badge": "多币种"
+    },
+    {
+      "id": "myfin",
+      "name": "MyFin",
+      "mark": "MY",
+      "category": "bank",
+      "group": "intl",
+      "label": "华人友好跨境账户",
+      "detail": "中文操作路径清晰，适合跨境换汇与日常资金管理。",
+      "code": "YA00W68M",
+      "link": "https://www.myfin.bg/",
+      "rating": "4.0"
+    },
+    {
+      "id": "n26",
+      "name": "N26",
+      "mark": "N26",
+      "category": "bank",
+      "group": "intl",
+      "label": "欧洲数字银行",
+      "detail": "支持欧元 SEPA 收付款，开通资格受居住地区限制。",
+      "code": "yanmingk73062c",
+      "link": "https://n26.com/r/haiyang85196c",
+      "rating": "4.0"
+    },
+    {
+      "id": "fsmone-hk",
+      "name": "FSMone HK",
+      "mark": "FSM",
+      "category": "bank",
+      "group": "hk",
+      "label": "香港多资产账户",
+      "detail": "支持港元账户与多类资产，适合连接香港投资路径。",
+      "code": "NIFULEI",
+      "link": "https://www.fsmone.com.hk/",
+      "rating": "4.3",
+      "badge": "香港"
+    },
+    {
+      "id": "bochk",
+      "name": "中银香港",
+      "mark": "BOC",
+      "category": "bank",
+      "group": "hk",
+      "label": "香港实体银行",
+      "detail": "中资背景、币种覆盖完整，开户材料与预约要求需提前核对。",
+      "link": "https://www.bochk.com/",
+      "rating": "4.3"
+    },
+    {
+      "id": "hsbc-hk",
+      "name": "汇丰香港",
+      "mark": "HSBC",
+      "category": "bank",
+      "group": "hk",
+      "label": "全球银行网络",
+      "detail": "国际转账和多地区账户联动较强，适合长期跨境使用。",
+      "link": "https://www.hsbc.com.hk/",
+      "rating": "4.4"
+    },
+    {
+      "id": "mercury",
+      "name": "Mercury",
+      "mark": "MRC",
+      "category": "bank",
+      "group": "us",
+      "label": "美国企业账户",
+      "detail": "面向符合条件的公司账户，需准备公司与业务证明材料。",
+      "link": "https://mercury.com/",
+      "rating": "4.2",
+      "badge": "企业"
+    },
+    {
+      "id": "relay",
+      "name": "Relay",
+      "mark": "RLY",
+      "category": "bank",
+      "group": "us",
+      "label": "美国企业资金管理",
+      "detail": "提供多账户和费用管理能力，适合小型出海团队。",
+      "link": "https://relayfi.com/",
+      "rating": "4.0"
+    },
+    {
+      "id": "geekpay",
+      "name": "GeekPay",
+      "mark": "GP",
+      "category": "bank",
+      "group": "cn",
+      "label": "开户辅助服务",
+      "detail": "用于整理开户材料和流程信息，选择前核验服务主体与费用。",
+      "link": "#",
+      "rating": "3.8",
+      "badge": "服务"
+    },
+    {
+      "id": "giffgaff",
+      "name": "giffgaff",
+      "mark": "GG",
+      "category": "esim",
+      "group": "esim-num",
+      "label": "英国长期保号",
+      "detail": "保号成本低，适合接收验证码和长期持有英国号码。",
+      "link": "http://www.giffgaff.com/orders/affiliate/mjboo546_1731680040526",
+      "rating": "5.0",
+      "badge": "英国"
+    },
+    {
+      "id": "vodafone",
+      "name": "Vodafone DE",
+      "mark": "VODA",
+      "category": "esim",
+      "group": "esim-num",
+      "label": "德国实体号码",
+      "detail": "适合欧洲账号验证和德国本地通信场景。",
+      "link": "https://www.vodafone.de/freikarten/callya-classic-form/",
+      "rating": "4.0",
+      "badge": "德国"
+    },
+    {
+      "id": "clubsim",
+      "name": "ClubSIM",
+      "mark": "CLUB",
+      "category": "esim",
+      "group": "esim-num",
+      "label": "香港免月租保号",
+      "detail": "轻量使用香港号码的选择，适合验证码和低频通信。",
+      "code": "KF1GNG",
+      "link": "https://www.clubsim.com.hk/",
+      "rating": "4.0",
+      "badge": "香港"
+    },
+    {
+      "id": "redteago",
+      "name": "Redteago",
+      "mark": "RT",
+      "category": "esim",
+      "group": "esim-data",
+      "label": "全球流量平台",
+      "detail": "覆盖地区多、流量包选择丰富，适合短期出境。",
+      "code": "RTGF94EFR",
+      "link": "https://esim.redteago.com/?c=pfkq0ygi",
+      "rating": "4.8",
+      "badge": "9 折"
+    },
+    {
+      "id": "eskimo",
+      "name": "Eskimo",
+      "mark": "ESK",
+      "category": "esim",
+      "group": "esim-data",
+      "label": "全球 eSIM 流量",
+      "detail": "支持多地区流量包，适合短期旅行和备用网络。",
+      "code": "NIFULEI",
+      "link": "https://eskimo.travel/TALAKANG/NIFULEI",
+      "rating": "4.2",
+      "badge": "送流量"
+    },
+    {
+      "id": "kitesim",
+      "name": "KiteSim",
+      "mark": "KITE",
+      "category": "esim",
+      "group": "esim-data",
+      "label": "按日流量平台",
+      "detail": "流量方案灵活，适合短期、多地区切换的出行计划。",
+      "code": "JRXKM8",
+      "link": "https://kitesim.com/",
+      "rating": "3.8"
+    },
+    {
+      "id": "xesim",
+      "name": "Xesim 写卡器",
+      "mark": "XE",
+      "category": "esim",
+      "group": "esim-writer",
+      "label": "eSIM 实体卡写入",
+      "detail": "让不原生支持 eSIM 的设备通过实体卡管理 Profile。",
+      "code": "NIFULEI",
+      "link": "https://xesim.cc/?DIST=QkVOHQ==",
+      "rating": "4.5",
+      "badge": "写卡器"
+    },
+    {
+      "id": "9esim",
+      "name": "9esim 写卡器",
+      "mark": "9E",
+      "category": "esim",
+      "group": "esim-writer",
+      "label": "备用 eSIM 写卡方案",
+      "detail": "支持多种 eSIM 格式，适合作为另一套写卡器选择。",
+      "code": "NIFULEI",
+      "link": "https://www.9esim.com/?coupon=nifulei",
+      "rating": "4.0",
+      "badge": "写卡器"
+    }
+  ],
+  "categoryPages": {
+    "nifulei-bank": {
+      "eyebrow": "ACCOUNT SYSTEM",
+      "title": "国外银行卡",
+      "description": "按使用目的拆分国际账户、香港账户、美国企业账户和开户辅助服务。",
+      "groups": [
+        ["intl", "国际账户", "跨境收付款、多币种余额与换汇入口"],
+        ["hk", "香港地区银行卡", "连接内地、香港证券账户与国际资金网络"],
+        ["us", "美国银行卡", "适合符合条件的公司和跨境团队"],
+        ["cn", "开户辅助", "材料整理、流程咨询和风险核验"]
+      ]
+    },
+    "nifulei-broker": {
+      "eyebrow": "GLOBAL MARKETS",
+      "title": "港美股券商",
+      "description": "把市场覆盖、开户资格、入金路径和使用成本放在同一张清单里比较。",
+      "groups": [
+        ["hk", "港股券商", "面向港股、美股和多市场投资"],
+        ["us", "美股券商", "全球市场与长期投资入口"],
+        ["chain", "链上美股", "使用钱包连接代币化股票市场"]
+      ]
+    },
+    "nifulei-crypto": {
+      "eyebrow": "CRYPTO & WEB3",
+      "title": "加密 Web3",
+      "description": "覆盖交易所、DEX、支付卡、冷钱包和热钱包，先理解用途再选择入口。",
+      "groups": [
+        ["exchange", "交易所", "法币入金、现货和衍生品入口"],
+        ["dex", "去中心化交易所 DEX", "钱包直连的现货与永续合约工具"],
+        ["card", "加密银行卡", "连接数字资产与日常支付"],
+        ["cold", "冷钱包", "长期资产离线保管"],
+        ["hot", "热钱包", "连接链上应用与日常交互"]
+      ]
+    },
+    "nifulei-esim": {
+      "eyebrow": "ESIM & TELECOM",
+      "title": "跨境通讯",
+      "description": "境外号码、旅行流量和写卡工具分开选择，避免把保号与上网需求混在一起。",
+      "groups": [
+        ["esim-num", "境外号码", "长期保号、验证码和本地通信"],
+        ["esim-data", "eSIM 流量平台", "短期旅行与多地区上网"],
+        ["esim-writer", "eSIM 写卡器", "为不原生支持 eSIM 的设备提供方案"]
+      ]
+    }
+  },
+  "brokerRanking": [
+    ["1", "Interactive Brokers", "全球专业", "4.7", "全球市场、费率低"],
+    ["2", "长桥证券", "互联网券商", "4.6", "界面清晰、社区活跃"],
+    ["3", "盈立证券", "科技券商", "4.4", "新手友好、数据工具完整"],
+    ["4", "Charles Schwab", "美资老牌", "4.4", "长期投资与专业平台"],
+    ["5", "FSMone", "综合金融", "4.2", "基金、债券与证券账户"],
+    ["6", "BBAE", "华人友好", "4.0", "中文体验与美股入口"]
+  ],
+  "roadmap": [
+    {
+      "id": "network",
+      "mark": "01",
+      "title": "网络与号码",
+      "summary": "先准备稳定的连接、境外号码和备用网络。",
+      "detail": "网络和号码是后续注册交易所、银行与券商的基础。优先完成设备兼容性、号码保留成本和备用方案检查。",
+      "href": "/nifulei-esim"
+    },
+    {
+      "id": "exchange",
+      "mark": "02",
+      "title": "交易所入口",
+      "summary": "建立法币入金和数字资产转换入口。",
+      "detail": "选择至少一个主流交易平台，完成身份验证、安全设置、小额入金和提币测试。",
+      "href": "/nifulei-crypto#exchange"
+    },
+    {
+      "id": "bank",
+      "mark": "03",
+      "title": "海外账户",
+      "summary": "持有外币并连接跨境收付款网络。",
+      "detail": "根据居住地、币种和收付款需求选择 Wise、香港银行或企业账户，先核对资格与费用。",
+      "href": "/nifulei-bank"
+    },
+    {
+      "id": "broker",
+      "mark": "04",
+      "title": "全球投资",
+      "summary": "把资金连接到港股、美股和全球市场。",
+      "detail": "比较开户资格、市场覆盖、入金方式与费率，完成小额入金和首次交易验证。",
+      "href": "/nifulei-broker"
+    },
+    {
+      "id": "wallet",
+      "mark": "05",
+      "title": "离线保管",
+      "summary": "把长期资产移出平台并建立备份。",
+      "detail": "选择冷钱包、备份助记词、完成恢复演练，再把长期持有资产分批转入。",
+      "href": "/nifulei-crypto#cold"
+    },
+    {
+      "id": "flow",
+      "mark": "06",
+      "title": "资金流转",
+      "summary": "把入金、投资、支付和退出路径连起来。",
+      "detail": "记录每条资金路径的手续费、到账时间、限额和凭证要求，始终保留备用路线。",
+      "href": "/nifulei-journey"
+    }
+  ],
+  "journey": [
+    {
+      "title": "网络环境",
+      "mark": "🌐",
+      "description": "建立稳定、可验证的连接环境，并准备备用网络。",
+      "tasks": ["确认设备与网络限制", "准备主用和备用连接", "完成真实访问测试"],
+      "tools": ["Xesim 写卡器", "Redteago", "Eskimo"]
+    },
+    {
+      "title": "海外应用环境",
+      "mark": "📱",
+      "description": "准备海外 Apple ID、Google Play 与必要的验证方式。",
+      "tasks": ["准备海外应用商店账号", "确认支付与地区设置", "安装常用安全工具"],
+      "tools": ["海外 Apple ID", "Google Play", "密码管理器"]
+    },
+    {
+      "title": "境外 eSIM 号码",
+      "mark": "📲",
+      "description": "选择一个能长期保留、可接收验证码的境外号码。",
+      "tasks": ["选择目标地区号码", "购买并完成激活", "记录保号规则和续费时间"],
+      "tools": ["giffgaff", "Vodafone DE", "ClubSIM"]
+    },
+    {
+      "title": "海外银行账户",
+      "mark": "🏦",
+      "description": "建立多币种收付款、换汇和资金中转能力。",
+      "tasks": ["选择账户类型", "准备开户材料", "完成小额收付款测试"],
+      "tools": ["Wise", "iFAST", "香港银行"]
+    },
+    {
+      "title": "港美股投资",
+      "mark": "📈",
+      "description": "完成券商开户、入金和第一笔小额交易。",
+      "tasks": ["核对开户资格", "比较入金与费率", "建立交易记录"],
+      "tools": ["长桥证券", "盈立证券", "IBKR"]
+    },
+    {
+      "title": "加密交易所",
+      "mark": "₿",
+      "description": "建立数字资产买入、转账和安全验证路径。",
+      "tasks": ["完成身份与安全设置", "小额买入和提币测试", "记录手续费与网络"],
+      "tools": ["OKX", "Binance", "Bybit"]
+    },
+    {
+      "title": "加密支付卡",
+      "mark": "💳",
+      "description": "在可用地区连接数字资产与日常支付。",
+      "tasks": ["核对地区与费用", "完成小额充值", "测试线上与线下支付"],
+      "tools": ["RedotPay", "交易所卡片", "备用支付"]
+    },
+    {
+      "title": "加密冷钱包",
+      "mark": "🔒",
+      "description": "建立私钥离线保管、备份和恢复能力。",
+      "tasks": ["选择硬件钱包", "离线备份助记词", "完成恢复演练"],
+      "tools": ["OneKey", "SafePal", "Ledger"]
+    }
+  ],
+  "faqs": [
+    ["这些内容是投资建议吗？", "不是。页面用于整理公开入口和一般性操作路径，不构成投资、金融、法律或税务建议。"],
+    ["为什么部分工具有邀请码？", "部分入口包含推广链接或邀请码，项目可能因此获得佣金。邀请码不代表对产品的保证。"],
+    ["路线进度会上传服务器吗？", "不会。主题、路线进度和已完成项目只保存在当前浏览器中。"],
+    ["500MB 空间够用吗？", "够用。站点采用静态页面和轻量前端脚本，不需要在服务器安装 node_modules 或数据库。"]
+  ]
+}
