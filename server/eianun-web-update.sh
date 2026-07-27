@@ -3,6 +3,10 @@ set -eu
 
 BASE_DIR="${EIANUN_WEB_DIR:-/opt/eianun-web}"
 ARCHIVE_URL="${EIANUN_WEB_ARCHIVE_URL:-https://github.com/illria/eianun-web/archive/refs/heads/gh-pages.tar.gz}"
+case "$ARCHIVE_URL" in
+  *\?*) DOWNLOAD_URL="${ARCHIVE_URL}&cache=$(date +%s)" ;;
+  *) DOWNLOAD_URL="${ARCHIVE_URL}?cache=$(date +%s)" ;;
+esac
 TMP_DIR="$(mktemp -d /tmp/eianun-web-update.XXXXXX)"
 
 cleanup() {
@@ -20,11 +24,11 @@ if ! command -v wget >/dev/null 2>&1; then
 fi
 
 mkdir -p "$BASE_DIR"
-wget -qO "$TMP_DIR/site.tar.gz" "$ARCHIVE_URL"
+wget -qO "$TMP_DIR/site.tar.gz" "$DOWNLOAD_URL"
 tar -xzf "$TMP_DIR/site.tar.gz" -C "$TMP_DIR"
 
 SOURCE_DIR="$(find "$TMP_DIR" -mindepth 1 -maxdepth 1 -type d | head -n 1)"
-if [ -z "$SOURCE_DIR" ] || [ ! -s "$SOURCE_DIR/index.html" ]; then
+if [ -z "$SOURCE_DIR" ] || [ ! -s "$SOURCE_DIR/index.html" ] || [ ! -s "$SOURCE_DIR/site.css" ] || [ ! -s "$SOURCE_DIR/site.js" ] || [ ! -s "$SOURCE_DIR/site-data.json" ]; then
   echo "下载的静态包无效，未更新网站。" >&2
   exit 1
 fi
